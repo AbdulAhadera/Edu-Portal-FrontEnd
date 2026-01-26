@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  /* Tailwind utility classes generated: */
+  --color-primary: var(--primary);          /* bg-primary, text-primary */
+  --color-primary-muted: var(--primary-muted); /* bg-primary-muted */
+  --color-danger: var(--danger);            /* bg-danger */
+  
+  --color-page: var(--page);                /* bg-page */
+  --color-card: var(--card);                /* bg-card */
+  
+  --color-ui-border: var(--ui-border);      /* border-ui-border */
+  --color-ui-hover: var(--ui-hover);        /* hover:bg-ui-hover */
+  --color-text-main: var(--text-main);      /* text-text-main */
+  --color-text-muted: var(--text-muted);    /* text-text-muted */
+
+  --color-button-primary-bg: var(--primary);   /* Button primary background */
+  --color-button: #ffffff;        /* Button primary text color */
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+/* --- LIGHT MODE (Base Colors) --- */
+:root {
+  --primary: #2563eb;       /* blue-600 */
+  --primary-muted: #eff6ff; /* blue-50 */
+  --danger: #ef4444;        /* red-500 */
+  --page: #f9fafb;          /* gray-50 (Background) */
+  --card: #ffffff;          /* white (Header/Sidebar) */
+  --ui-border: #e5e7eb;     /* gray-200 */
+  --ui-hover: #f3f4f6;      /* gray-100 */
+  --text-main: #111827;     /* gray-900 (Main headings) */
+  --text-muted: #374151;    /* gray-700 (Nav items) */
+}
+
+/* --- DARK MODE (Overrides) --- */
+/* --- DARK MODE (Refined, Actually Sexy) --- */
+.dark {
+  --primary: #60a5fa;        /* Softer blue, less neon */
+  --primary-muted: #0f172a;  /* Deep slate, not dead black */
+
+  --danger: #fb7185;         /* Rose-ish red, softer */
+
+  --page: #020617;           /* Almost black, but not black */
+  --card: #020617;        /* Card clearly lifted from page */
+
+  --ui-border: #1e293b;      /* Visible but subtle */
+  --ui-hover: #1e293b;       /* Clean hover, not muddy */
+
+  --text-main: #e5e7eb;      /* Soft white, no eye pain */
+  --text-muted: #94a3b8;     /* Bluish gray, classy */
+}
+
+.dark .card {
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.03),
+              0 10px 30px rgba(0,0,0,0.6);
+}
+
+
+/* Additional custom styles can be added below */
+/* Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  display: none;
+}
