@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout.tsx";
-import { StudentCourse, StudentDashboard, StudentAssignment, StudentGrade, StudentAttendance } from "./pages/index.ts";
+import { StudentCourse, StudentDashboard, StudentAssignment, StudentGrade, StudentAttendance, StudentResource } from "./pages/index.ts";
 
 
 const Router: React.FC = () => {
@@ -16,6 +16,7 @@ const Router: React.FC = () => {
         <Route path="assignments" element={<StudentAssignment />} />
         <Route path="grades" element={<StudentGrade />} />
         <Route path="attendance" element={<StudentAttendance />} />
+        <Route path="resources" element={<StudentResource />} />
 
       </Route>
 

@@ -1,64 +1,93 @@
 @import "tailwindcss";
 
 @theme {
-  /* Tailwind utility classes generated: */
-  --color-primary: var(--primary);          /* bg-primary, text-primary */
-  --color-primary-muted: var(--primary-muted); /* bg-primary-muted */
-  --color-danger: var(--danger);            /* bg-danger */
+  --color-primary: var(--primary);
+  --color-primary-muted: var(--primary-muted);
+  --color-danger: var(--danger);
   
-  --color-page: var(--page);                /* bg-page */
-  --color-card: var(--card);                /* bg-card */
+  --color-page: var(--page);
+  --color-card: var(--card);
   
-  --color-ui-border: var(--ui-border);      /* border-ui-border */
-  --color-ui-hover: var(--ui-hover);        /* hover:bg-ui-hover */
-  --color-text-main: var(--text-main);      /* text-text-main */
-  --color-text-muted: var(--text-muted);    /* text-text-muted */
+  --color-ui-border: var(--ui-border);
+  --color-ui-hover: var(--ui-hover);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
 
-  --color-button-primary-bg: var(--primary);   /* Button primary background */
-  --color-button: #ffffff;        /* Button primary text color */
+  --color-button-primary-bg: var(--primary);
+  --color-button: #ffffff;
 }
 
 @variant dark (&:where(.dark, .dark *));
 
-/* --- LIGHT MODE (Base Colors) --- */
+/* --- LIGHT MODE (Clean, Airy, Apple-esque) --- */
 :root {
-  --primary: #2563eb;       /* blue-600 */
-  --primary-muted: #eff6ff; /* blue-50 */
-  --danger: #ef4444;        /* red-500 */
-  --page: #f9fafb;          /* gray-50 (Background) */
-  --card: #ffffff;          /* white (Header/Sidebar) */
-  --ui-border: #e5e7eb;     /* gray-200 */
-  --ui-hover: #f3f4f6;      /* gray-100 */
-  --text-main: #111827;     /* gray-900 (Main headings) */
-  --text-muted: #374151;    /* gray-700 (Nav items) */
+  --primary: #4f46e5;       /* Indigo-600: More modern than standard blue */
+  --primary-muted: #eef2ff; /* Indigo-50: Perfect for highlighting blocks */
+  --danger: #ef4444;
+  
+  --page: #f8fafc;          /* Slate-50: The "Premium" background color */
+  --card: #ffffff;          /* Pure white cards pop against slate page */
+  
+  --ui-border: #e2e8f0;     /* Slate-200: Soft and subtle */
+  --ui-hover: #f1f5f9;      /* Slate-100 */
+  
+  --text-main: #0f172a;     /* Slate-900: Deep Navy-Black */
+  --text-muted: #64748b;    /* Slate-500: Calm secondary text */
 }
 
-/* --- DARK MODE (Overrides) --- */
-/* --- DARK MODE (Refined, Actually Sexy) --- */
+/* --- DARK MODE (Deep Space, High Contrast) --- */
 .dark {
-  --primary: #60a5fa;        /* Softer blue, less neon */
-  --primary-muted: #0f172a;  /* Deep slate, not dead black */
+  --primary: #818cf8;        /* Indigo-400: Glows better in dark mode */
+  --primary-muted: rgba(79, 70, 229, 0.15); 
 
-  --danger: #fb7185;         /* Rose-ish red, softer */
+  --danger: #fb7185;
 
-  --page: #020617;           /* Almost black, but not black */
-  --card: #020617;        /* Card clearly lifted from page */
+  --page: #020617;           /* Slate-950: The "Deep Sea" look */
+  --card: #0f172a;           /* Slate-900: Clearly elevated from page */
 
-  --ui-border: #1e293b;      /* Visible but subtle */
-  --ui-hover: #1e293b;       /* Clean hover, not muddy */
+  --ui-border: #1e293b;      /* Slate-800 */
+  --ui-hover: #1e293b;       
 
-  --text-main: #e5e7eb;      /* Soft white, no eye pain */
-  --text-muted: #94a3b8;     /* Bluish gray, classy */
+  --text-main: #f8fafc;      /* Slate-50: Sharp and readable */
+  --text-muted: #94a3b8;     /* Slate-400: Muted but clear */
 }
 
-.dark .card {
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.03),
-              0 10px 30px rgba(0,0,0,0.6);
+/* --- GLOBAL STYLES FOR THE "SEXY" FEEL --- */
+
+/* 1. Smooth transitions for theme switching */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+/* 2. Interactive Cards */
+.card {
+  border-radius: 12px;
+  border: 1px solid var(--ui-border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-/* Additional custom styles can be added below */
-/* Chrome, Safari, Edge */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+.dark .card:hover {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  border-color: var(--primary); /* Glow effect on hover */
+}
+
+/* 3. Sexy Custom Scrollbar (Thin & Rounded) */
 ::-webkit-scrollbar {
-  display: none;
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--page);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ui-border);
+  border-radius: 20px;
+  border: 2px solid var(--page);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
 }

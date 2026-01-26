@@ -62,7 +62,7 @@ export type AssignmentData = {
     status: 'Pending' | 'Submitted' | 'Late' | 'Graded';
 };
 
-export type AttendanceStatus = 'present' | 'absent';
+export type AttendanceStatus = 'present' | 'absent' | undefined;
 
 
 //  --- Interfaces ---

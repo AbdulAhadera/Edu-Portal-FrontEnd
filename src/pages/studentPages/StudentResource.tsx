@@ -6,4 +6,4 @@ const StudentResource: React.FC = () => {
     )
 }
 
-export default StudentResource
+export default StudentResource;
