@@ -1,18 +1,179 @@
+import { useState, useMemo } from "react";
+import DataTable from "../../components/DataTable";
+import {
+    courses,
+    studentAssignments, type AssignmentData,
+} from "../../data/mockData";
+
+
+// defining columns here.
+
+// Columns definition for Assignment DataTable
+const assignmentColumns = [
+    // Serial / assignment number
+    {
+        header: "No",
+        key: "assignNo"
+    },
+
+    // Assignment title
+    {
+        header: "Title",
+        key: "assignmentTitle"
+    },
+
+    // Assignment deadline
+    {
+        header: "Deadline",
+        key: "deadline"
+    },
+
+    // Status column with colored badge
+    {
+        header: "Status",
+        key: "status",
+        render: (value: AssignmentData["status"]) => (
+            <span
+                className={`py-1 rounded-full text-xs font-medium ${value === "Graded"
+                    ? "bg-green-500/10 text-green-500 px-4"
+                    : value === "Submitted"
+                        ? "bg-blue-500/10 text-blue-500"
+                        : value === "Late"
+                            ? "bg-red-500/10 text-red-500 px-6"
+                            : "bg-yellow-500/10 text-yellow-500 px-3"
+                    }`}
+            >
+                {value}
+            </span>
+        ),
+    },
+
+    // Submission column
+    {
+        header: "Submission",
+        key: "addedSubmission", // maps to AssignmentData
+        render: (_: any, row: AssignmentData) => {
+            // 1: Already submitted? Show "Download Submission" link
+            if (row.addedSubmission) {
+                return (
+                    <a
+                        href={row.addedSubmission}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary text-sm font-medium hover:underline"
+                    >
+                        Download Submission
+                    </a>
+                );
+            }
+
+            // 2: Not submitted? Show file upload input
+            return (
+                <label className="cursor-pointer px-4 py-1 rounded-full text-xs font-medium  bg-green-500/10 text-green-500 hover:bg-green-500/20 transition">
+                    Upload
+                    <input
+                        type="file"
+                        className="hidden"
+                        onChange={(e) => {
+                            const file = e.target.files?.[0];
+                            if (file) {
+                                handleUpload(row.id, file); // function to handle upload
+                            }
+                        }}
+                    />
+                </label>
+            );
+        },
+    },
+
+    // Remarks / comments column
+    {
+        header: "Remarks",
+        key: "comments"
+    },
+    
+    // Assignment Solution column
+    {
+        header: "Solution",
+        key: "assignmentSolution",
+        render: (_: any, row: AssignmentData) => (
+            <a
+                href={row.assignmentSolution}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-card px-2 py-1 rounded-none text-xs font-medium hover:bg-blue-600 transition"
+            >
+                View Solution
+            </a>
+        ),
+    },
+];
+
+const handleUpload = (assignmentId: string, file: File) => {
+    console.log("Uploading for:", assignmentId, file);
+
+    // here we will:
+    // 1. API call
+    // 2. update state
+};
 
 const StudentAssignment: React.FC = () => {
 
+    // default: first course selected
+    const [selectedCourseId, setSelectedCourseId] = useState<number>(
+        courses[0].id
+    );
+
+    // filter assignments based on selected course
+    const filteredAssignments = useMemo(
+        () =>
+            studentAssignments.filter(
+                (assignment) => assignment.courseId === selectedCourseId
+            ),
+        [selectedCourseId]
+    );
+
+
+
     return (
         <div>
+            {/* Heading */}
             <div className="mb-6">
-                <h1 className="text-2xl font-bold text-text-main  sm:text-3xl">Assignment</h1>
-                <p className="text-text-muted mt-1">Track and submit your assignments</p>
+                <h1 className="text-2xl font-bold text-text-main sm:text-3xl">
+                    Assignments
+                </h1>
+                <p className="text-text-muted mt-1">
+                    Track and submit your assignments
+                </p>
             </div>
-            
-            <div>
 
+            {/* Horizontal scrollable courses */}
+            <div className="mb-6 overflow-x-auto hide-scrollbar">
+                <div className="flex gap-3 min-w-max pb-2">
+                    {courses.map((course) => (
+                        <button
+                            key={course.id}
+                            onClick={() => setSelectedCourseId(course.id)}
+                            className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition ${selectedCourseId === course.id
+                                ? "bg-primary text-white"
+                                : "bg-card border border-ui-border text-text-muted hover:bg-ui-hover"
+                                }`}
+                        >
+                            {course.title}
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            {/* Table */}
+            <div className="bg-card">
+                <DataTable<AssignmentData>
+                    rows={filteredAssignments}
+                    columns={assignmentColumns}
+                />
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default StudentAssignment;

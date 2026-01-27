@@ -17,6 +17,7 @@ import {
     ClipboardCheck,
     BookCopy
 } from "lucide-react";
+import type { JSX } from "react";
 
 // --- Types ---
 
@@ -45,6 +46,7 @@ export type CourseCardData = {
     duration: string;
     image: string;
     barColor: string;
+    courseMaterial?: object;
 };
 
 export type AssignmentData = {
@@ -64,6 +66,17 @@ export type AssignmentData = {
 
 export type AttendanceStatus = 'present' | 'absent' | undefined;
 
+
+export type Column<T> = {
+    header: string | number;
+    key?: keyof T;
+    render?: (value: any, row: T) => JSX.Element;
+};
+
+export type DataTableProps<T> = {
+    rows: T[];
+    columns?: Column<T>[];
+};
 
 //  --- Interfaces ---
 export interface AttendanceRecord {
@@ -371,6 +384,11 @@ export const courses: CourseCardData[] = [
         duration: "10 weeks",
         image: "https://images.unsplash.com/photo-1509228468518-180dd4864904",
         barColor: "bg-blue-500",
+        courseMaterial: [
+            { addDate: "2026-01-10", title: "Arithmetic Basics", url: "https://pdfobject.com/pdf/sample.pdf" },
+            { addDate: "2026-01-12", title: "Fractions & Decimals", url: "https://pdfobject.com/pdf/sample.pdf" },
+            { addDate: "2026-01-15", title: "Problem Solving Techniques", url: "https://pdfobject.com/pdf/sample.pdf" },
+        ]
     },
     {
         id: 102,
@@ -380,6 +398,11 @@ export const courses: CourseCardData[] = [
         duration: "8 weeks",
         image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8",
         barColor: "bg-green-500",
+        courseMaterial: [
+            { addDate: "2026-01-05", title: "Grammar Rules", url: "https://pdfobject.com/pdf/sample.pdf" },
+            { addDate: "2026-01-07", title: "Sentence Structure", url: "https://pdfobject.com/pdf/sample.pdf" },
+            { addDate: "2026-01-09", title: "Essay Writing Basics", url: "https://pdfobject.com/pdf/sample.pdf" },
+        ]
     },
     {
         id: 103,
@@ -389,6 +412,11 @@ export const courses: CourseCardData[] = [
         duration: "9 weeks",
         image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d",
         barColor: "bg-red-500",
+        courseMaterial: [
+            { addDate: "2026-01-08", title: "Physics Basics", url: "https://pdfobject.com/pdf/sample.pdf" },
+            { addDate: "2026-01-10", title: "Introduction to Chemistry", url: "https://pdfobject.com/pdf/sample.pdf" },
+            { addDate: "2026-01-12", title: "Biology Fundamentals", url: "https://pdfobject.com/pdf/sample.pdf" },
+        ]
     },
     {
         id: 104,
@@ -398,6 +426,11 @@ export const courses: CourseCardData[] = [
         duration: "6 weeks",
         image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
         barColor: "bg-yellow-500",
+        courseMaterial: [
+            { addDate: "2026-01-03", title: "Computer Basics", url: "https://pdfobject.com/pdf/sample.pdf" },
+            { addDate: "2026-01-05", title: "Hardware Overview", url: "https://pdfobject.com/pdf/sample.pdf" },
+            { addDate: "2026-01-07", title: "Software Fundamentals", url: "https://pdfobject.com/pdf/sample.pdf" },
+        ]
     },
     {
         id: 105,
@@ -407,6 +440,11 @@ export const courses: CourseCardData[] = [
         duration: "7 weeks",
         image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
         barColor: "bg-purple-500",
+        courseMaterial: [
+            { addDate: "2026-01-02", title: "History Overview", url: "https://pdfobject.com/pdf/sample.pdf" },
+            { addDate: "2026-01-04", title: "Geography Basics", url: "https://pdfobject.com/pdf/sample.pdf" },
+            { addDate: "2026-01-06", title: "Civic Responsibilities", url: "https://pdfobject.com/pdf/sample.pdf" },
+        ]
     },
     {
         id: 106,
@@ -416,6 +454,11 @@ export const courses: CourseCardData[] = [
         duration: "6 weeks",
         image: "https://images.unsplash.com/photo-1609599006353-e629aaabfeae",
         barColor: "bg-teal-500",
+        courseMaterial: [
+            { addDate: "2026-01-01", title: "Teachings of Islam", url: "https://pdfobject.com/pdf/sample.pdf" },
+            { addDate: "2026-01-03", title: "Islamic Ethics", url: "https://pdfobject.com/pdf/sample.pdf" },
+            { addDate: "2026-01-05", title: "History of Islam", url: "https://pdfobject.com/pdf/sample.pdf" },
+        ]
     },
 ];
 
@@ -464,7 +507,6 @@ export const roleSideBarItems: Record<UserRole, LayoutItem[]> = {
         { id: "grades", label: "Grades", icon: BarChart3 },
         { id: "attendance", label: "Attendance", icon: CheckSquare },
         { id: "resources", label: "Resources", icon: Library },
-        { id: "discussions", label: "Discussions", icon: MessageSquare },
         { id: "calendar", label: "Calendar", icon: Calendar },
         { id: "feedback", label: "Feedback", icon: FileText }
     ],
