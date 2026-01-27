@@ -83,7 +83,9 @@ const Layout = ({ role }: LayoutProps) => {
                 </button>
 
 
-                <button className="flex items-center text-text-muted gap-2 p-2 hover:bg-ui-hover rounded-lg">
+                <button
+                    onClick={() => handleNavigate('profile')}
+                 className="flex items-center text-text-muted gap-2 p-2 hover:bg-ui-hover rounded-lg">
                     <UserCircle size={24} />
                     <span className="hidden sm:inline text-sm font-medium">Alex Morgan</span>
                 </button>

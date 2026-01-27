@@ -1,9 +1,10 @@
 import { useState, useMemo } from "react";
-import DataTable from "../../components/DataTable";
+import DataTable from "../../components/DataTable.tsx";
 import {
     courses,
     studentAssignments, type AssignmentData,
 } from "../../data/mockData";
+import Input from "../../components/Input.tsx"
 
 
 // defining columns here.
@@ -69,15 +70,15 @@ const assignmentColumns = [
 
             // 2: Not submitted? Show file upload input
             return (
-                <label className="cursor-pointer px-4 py-1 rounded-full text-xs font-medium  bg-green-500/10 text-green-500 hover:bg-green-500/20 transition">
+                <label className="cursor-pointer rounded-full text-sm font-medium">
                     Upload
-                    <input
+                    <Input
                         type="file"
-                        className="hidden"
+                        className="hidden" // keeps the actual input invisible
                         onChange={(e) => {
                             const file = e.target.files?.[0];
                             if (file) {
-                                handleUpload(row.id, file); // function to handle upload
+                                handleUpload(row.id, file); // your upload handler
                             }
                         }}
                     />
@@ -91,7 +92,7 @@ const assignmentColumns = [
         header: "Remarks",
         key: "comments"
     },
-    
+
     // Assignment Solution column
     {
         header: "Solution",

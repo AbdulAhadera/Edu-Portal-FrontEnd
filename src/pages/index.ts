@@ -4,6 +4,9 @@ import StudentAssignment from "./studentPages/StudentAssignment";
 import StudentGrade from "./studentPages/StudentGrade";
 import StudentAttendance from "./studentPages/StudentAttendance";
 import StudentResource from "./studentPages/StudentResource";
+import StudentFeedback from "./studentPages/StudentFeedback";
+import StudentNotifications from "./studentPages/StudentNotifications";
+import StudentHomework from "./studentPages/StudentHomework";
 
 export {
     StudentDashboard,
@@ -11,5 +14,8 @@ export {
     StudentAssignment,
     StudentGrade,
     StudentAttendance,
-    StudentResource
+    StudentResource,
+    StudentFeedback,
+    StudentNotifications,
+    StudentHomework
 };

@@ -15,7 +15,8 @@ import {
     Library,
     CheckSquare,
     ClipboardCheck,
-    BookCopy
+    BookCopy,
+    FileUserIcon
 } from "lucide-react";
 import type { JSX } from "react";
 
@@ -78,13 +79,83 @@ export type DataTableProps<T> = {
     columns?: Column<T>[];
 };
 
+export type DropdownOption = {
+    label: string;
+    value: string | number;
+};
+
+export type DropdownProps = {
+    options: DropdownOption[];
+    value?: string | number;          // currently selected value
+    onChange: (value: string | number) => void;
+    placeholder?: string;
+    className?: string;               // optional tailwind / custom styling
+};
+
+
 //  --- Interfaces ---
 export interface AttendanceRecord {
     date: string;
     status: AttendanceStatus;
 }
 
+export interface notification {
+    id: string;
+    type: 'assignment' | 'quiz' | 'announcement';
+    title: string;
+    message: string;
+    date: string;
+    read: boolean;
+}
+
+export const notificationData: notification[] = [
+    {
+        id: '1',
+        type: 'assignment',
+        title: 'New Assignment Posted',
+        message: 'Binary Search Tree Implementation - Due Jan 28',
+        date: '2026-01-24',
+        read: false
+    },
+    {
+        id: '2',
+        type: 'quiz',
+        title: 'Quiz Available',
+        message: 'Trees and Graphs Quiz opens tomorrow',
+        date: '2026-01-24',
+        read: false
+    },
+    {
+        id: '3',
+        type: 'announcement',
+        title: 'Course Announcement',
+        message: 'Midterm Exam Schedule Posted',
+        date: '2026-01-23',
+        read: true
+    },
+    {
+        id: '4',
+        type: 'assignment',
+        title: 'Assignment Graded',
+        message: 'Responsive Portfolio Website - Grade: 92/100',
+        date: '2026-01-22',
+        read: true
+    }
+];
 // --- Data Constants ---
+export const studentProfile = {
+    name: "Abdul Ahad",
+    rollNo: "02-131242-110",
+    studentId: "STU001245",
+    class: "10",
+    section: "A",
+    academicYear: "2024-2025",
+    email: "02-131242-110@school.edu",
+    dateOfBirth: "2005-05-01",
+    gender: "Male",
+    bloodGroup: "A+"
+};
+
 export const attendanceData: AttendanceRecord[] = [
     { date: '2026-01-01', status: 'present' },
     { date: '2026-01-02', status: 'present' },
@@ -503,11 +574,12 @@ export const roleSideBarItems: Record<UserRole, LayoutItem[]> = {
         { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
         { id: "mycourse", label: "My Courses", icon: BookCopy },
         { id: "assignments", label: "Assignments", icon: ClipboardList },
-        { id: "quizzes", label: "Quizzes", icon: ClipboardCheck },
+        { id: "homework", label: "Daily Homework", icon: ClipboardCheck },
         { id: "grades", label: "Grades", icon: BarChart3 },
         { id: "attendance", label: "Attendance", icon: CheckSquare },
         { id: "resources", label: "Resources", icon: Library },
-        { id: "calendar", label: "Calendar", icon: Calendar },
+        { id: "accounts", label: "Accounts", icon: FileUserIcon },
+        // { id: "calendar", label: "Calendar", icon: Calendar },
         { id: "feedback", label: "Feedback", icon: FileText }
     ],
     teacher: [
