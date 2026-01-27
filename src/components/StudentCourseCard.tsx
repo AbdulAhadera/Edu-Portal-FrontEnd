@@ -6,7 +6,7 @@ import { courses } from "../../src/data/mockData.ts";
 const StudentCourseCard: React.FC = () => {
 
     const courseDetailsModal = () => {
-
+        console.log('butt sahad')
     }
 
     return (

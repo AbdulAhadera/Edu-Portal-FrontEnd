@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout.tsx";
-import { StudentCourse, StudentDashboard, StudentAssignment, StudentGrade, StudentAttendance, StudentResource, StudentFeedback, StudentNotifications, StudentHomework } from "./pages/index.ts";
+import { StudentCourse, StudentDashboard, StudentAssignment, StudentGrade, StudentAttendance, StudentResource, StudentFeedback, StudentNotifications, StudentHomework, StudentAccount } from "./pages/index.ts";
 import StudentProfile from "./pages/studentPages/StudentProfile.tsx";
 
 
@@ -21,6 +21,7 @@ const Router: React.FC = () => {
         <Route path="notifications" element={<StudentNotifications />} />
         <Route path="homework" element={<StudentHomework />} />
         <Route path="profile" element={<StudentProfile />} />
+        <Route path="accounts" element={<StudentAccount />} />
       </Route>
 
 

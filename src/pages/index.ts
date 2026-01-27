@@ -7,6 +7,7 @@ import StudentResource from "./studentPages/StudentResource";
 import StudentFeedback from "./studentPages/StudentFeedback";
 import StudentNotifications from "./studentPages/StudentNotifications";
 import StudentHomework from "./studentPages/StudentHomework";
+import StudentAccount from "./studentPages/StudentAccount";
 
 export {
     StudentDashboard,
@@ -17,5 +18,6 @@ export {
     StudentResource,
     StudentFeedback,
     StudentNotifications,
-    StudentHomework
+    StudentHomework,
+    StudentAccount
 };

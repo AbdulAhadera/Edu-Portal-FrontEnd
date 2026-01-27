@@ -67,7 +67,6 @@ export type AssignmentData = {
 
 export type AttendanceStatus = 'present' | 'absent' | undefined;
 
-
 export type Column<T> = {
     header: string | number;
     key?: keyof T;
@@ -90,6 +89,17 @@ export type DropdownProps = {
     onChange: (value: string | number) => void;
     placeholder?: string;
     className?: string;               // optional tailwind / custom styling
+};
+
+export type Homework = {
+    id: number;
+    subject: string;
+    title: string;
+    description: string;
+    assignedDate: string;
+    dueDate: string;
+    status: 'pending' | 'completed' | 'overdue';
+    attachments: string[];
 };
 
 
@@ -142,7 +152,143 @@ export const notificationData: notification[] = [
         read: true
     }
 ];
+
+
 // --- Data Constants ---
+
+
+export const feesData = {
+    monthlyFee: 5000,
+    paidMonths: 6,
+    pendingMonths: 1,
+    currentMonth: "January 2024",
+    currentMonthFee: {
+        amount: 5000,
+        dueDate: "2024-01-31",
+        status: "unpaid",
+        fine: 0
+    },
+    monthlyPaymentHistory: [
+        {
+            id: 1,
+            month: "December 2023",
+            date: "2023-12-20",
+            amount: 5000,
+            status: "Unpaid",
+            transactionId: "TXN001234",
+            method: "Online Payment"
+        },
+        {
+            id: 2,
+            month: "November 2023",
+            date: "2023-11-25",
+            amount: 5000,
+            status: "paid",
+            transactionId: "TXN001235",
+            method: "Online Payment"
+        },
+        {
+            id: 3,
+            month: "October 2023",
+            date: "2023-10-18",
+            amount: 5000,
+            status: "paid",
+            transactionId: "TXN001236",
+            method: "Bank Transfer"
+        },
+        {
+            id: 4,
+            month: "September 2023",
+            date: "2023-09-22",
+            amount: 5000,
+            status: "paid",
+            transactionId: "TXN001237",
+            method: "Online Payment"
+        },
+        {
+            id: 5,
+            month: "August 2023",
+            date: "2023-08-15",
+            amount: 5000,
+            status: "paid",
+            transactionId: "TXN001238",
+            method: "Online Payment"
+        },
+        {
+            id: 6,
+            month: "July 2023",
+            date: "2023-07-20",
+            amount: 5000,
+            status: "paid",
+            transactionId: "TXN001239",
+            method: "Bank Transfer"
+        }
+    ]
+};
+
+export const homeworkData: Homework[] = [
+    {
+        id: 1,
+        subject: "Mathematics",
+        title: "Chapter 5: Quadratic Equations",
+        description: "Solve all problems from Exercise 5.2 and 5.3. Show complete working for each problem.",
+        assignedDate: "2024-01-20",
+        dueDate: "2024-01-27",
+        status: "pending",
+        attachments: ["exercise_5.2.pdf", "reference_notes.pdf"]
+    },
+    {
+        id: 2,
+        subject: "English",
+        title: "Essay Writing: Impact of Technology",
+        description: "Write a 500-word essay on 'The Impact of Technology on Modern Education'. Include introduction, body paragraphs, and conclusion.",
+        assignedDate: "2024-01-18",
+        dueDate: "2024-01-25",
+        status: "completed",
+        attachments: []
+    },
+    {
+        id: 3,
+        subject: "Science",
+        title: "Lab Report: Chemical Reactions",
+        description: "Complete the lab report on acid-base reactions. Include observations, chemical equations, and conclusions.",
+        assignedDate: "2024-01-15",
+        dueDate: "2024-01-22",
+        status: "overdue",
+        attachments: ["lab_template.pdf"]
+    },
+    {
+        id: 4,
+        subject: "Social Studies",
+        title: "Map Work: Indian States",
+        description: "On the outline map of India, mark all states and their capitals. Color code different regions.",
+        assignedDate: "2024-01-22",
+        dueDate: "2024-01-29",
+        status: "pending",
+        attachments: ["outline_map.pdf"]
+    },
+    {
+        id: 5,
+        subject: "Hindi",
+        title: "Chapter 3: Comprehension Questions",
+        description: "Answer all questions from Chapter 3 in complete sentences. Write in neat handwriting.",
+        assignedDate: "2024-01-19",
+        dueDate: "2024-01-26",
+        status: "pending",
+        attachments: []
+    },
+    {
+        id: 6,
+        subject: "Computer Science",
+        title: "Programming Assignment: Loops",
+        description: "Write programs for all 10 problems given in the loop exercises. Submit source code and output screenshots.",
+        assignedDate: "2024-01-17",
+        dueDate: "2024-01-24",
+        status: "completed",
+        attachments: ["loop_exercises.pdf"]
+    }
+];
+
 export const studentProfile = {
     name: "Abdul Ahad",
     rollNo: "02-131242-110",
