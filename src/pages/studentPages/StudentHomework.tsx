@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { Homework } from "../../types/index";
 import { homeworkData } from "../../data/mockData";
 import { Calendar, AlertCircle, GripVertical } from "lucide-react";
+import BaseHeader from "../../components/BaseHeader";
 
 const StudentHomework: React.FC = () => {
   const [items, setItems] = useState<Homework[]>(homeworkData);
@@ -33,14 +34,10 @@ const StudentHomework: React.FC = () => {
   return (
     <div>
       {/* Header */}
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-text-main sm:text-3xl">
-          Daily Homework
-        </h1>
-        <p className="text-text-muted mt-1">
-          Track your homework and mark them done when completed
-        </p>
-      </div>
+      <BaseHeader
+        heading="Daily Homework"
+        text="Track your homework and mark them done when completed"
+      />
 
       {/* Columns */}
       <div className="flex flex-col lg:flex-row gap-4">

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import CardPrimary from "../../components/CardPrimary";
 import { dashboardStats, announcementsData, studentAssignments } from "../../data/mockData";
+import BaseHeader from "../../components/BaseHeader";
 
 const StudentDashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -15,12 +16,10 @@ const StudentDashboard: React.FC = () => {
   return (
     <div className="">
       {/* Welcome Section */}
-      <div className="mb-4">
-        <h1 className="text-2xl sm:text-3xl font-bold text-text-main">Welcome back, Alex!</h1>
-        <p className="text-text-muted my-1 hidden sm:block">
-          Here's what's happening with your courses today
-        </p>
-      </div>
+      <BaseHeader
+        heading="Welcome Back, Ahad"
+        text="Continue learning and track your progress"
+      />
 
       {/* Dashboard Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-3">
@@ -86,8 +85,8 @@ const StudentDashboard: React.FC = () => {
               <div
                 key={a.id}
                 className={`flex flex-col p-3 rounded-sm border ${a.status === "Late"
-                    ? "border-red-400 bg-red-50 dark:bg-red-900/20"
-                    : "border-yellow-400 bg-yellow-50 dark:bg-yellow-900/20"
+                  ? "border-red-400 bg-red-50 dark:bg-red-900/20"
+                  : "border-yellow-400 bg-yellow-50 dark:bg-yellow-900/20"
                   }`}
               >
                 <div className="flex justify-between items-center mb-1">

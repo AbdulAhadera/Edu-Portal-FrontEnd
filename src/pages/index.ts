@@ -1,3 +1,5 @@
+
+// Student Import
 import StudentDashboard from "./studentPages/StudentDashboard";
 import StudentCourse from "./studentPages/StudentCourse";
 import StudentAssignment from "./studentPages/StudentAssignment";
@@ -8,7 +10,18 @@ import StudentFeedback from "./studentPages/StudentFeedback";
 import StudentNotifications from "./studentPages/StudentNotifications";
 import StudentHomework from "./studentPages/StudentHomework";
 import StudentAccount from "./studentPages/StudentAccount";
+import StudentProfile from "./studentPages/StudentProfile";
 
+
+// Teacher Import
+import TeacherDashboard from "./teacherPages/TeacherDashboard";
+
+// Teacher Export
+export {
+    TeacherDashboard
+}
+
+// Student Export
 export {
     StudentDashboard,
     StudentCourse,
@@ -19,5 +32,6 @@ export {
     StudentFeedback,
     StudentNotifications,
     StudentHomework,
-    StudentAccount
+    StudentAccount,
+    StudentProfile
 };

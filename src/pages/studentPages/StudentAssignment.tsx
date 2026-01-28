@@ -6,6 +6,7 @@ import {
 } from "../../data/mockData";
 import Input from "../../components/Input.tsx"
 import type { AssignmentData } from "../../types/index.ts";
+import BaseHeader from "../../components/BaseHeader.tsx";
 
 
 // defining columns here.
@@ -140,14 +141,10 @@ const StudentAssignment: React.FC = () => {
     return (
         <div>
             {/* Heading */}
-            <div className="mb-6">
-                <h1 className="text-2xl font-bold text-text-main sm:text-3xl">
-                    Assignments
-                </h1>
-                <p className="text-text-muted mt-1">
-                    Track and submit your assignments
-                </p>
-            </div>
+            <BaseHeader
+                heading="Assignments"
+                text=" Track and submit your assignments"
+            />
 
             {/* Horizontal scrollable courses */}
             <div className="mb-6 overflow-x-auto hide-scrollbar">

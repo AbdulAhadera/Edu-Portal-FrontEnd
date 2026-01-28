@@ -2,6 +2,7 @@ import React from 'react';
 import { feesData } from '../../data/mockData';
 import { Calendar, Key } from 'lucide-react';
 import DataTable from '../../components/DataTable';
+import BaseHeader from '../../components/BaseHeader';
 
 const StudentAccount: React.FC = () => {
 
@@ -29,14 +30,10 @@ const StudentAccount: React.FC = () => {
 
     return (
         <div className="bg-page">
-            <div className="mb-6">
-                <h1 className="text-2xl sm:text-3xl font-bold text-text-main">
-                    Accounts and Fees
-                </h1>
-                <p className="text-text-muted mt-1">
-                    Track your account details
-                </p>
-            </div>
+            <BaseHeader
+                heading="Student Account"
+                text="Track your Accounts here"
+            />
 
             <div className="bg-card  mb-6 rounded-sm shadow-md">
                 <div className="border-b border-ui-border p-6">

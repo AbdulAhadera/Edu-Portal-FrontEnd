@@ -3,6 +3,7 @@ import { Star, Send } from 'lucide-react';
 import { courses } from '../../data/mockData';
 import Dropdown from '../../components/Dropdown';
 import Button from '../../components/Button';
+import BaseHeader from '../../components/BaseHeader';
 
 const StudentFeedback: React.FC = () => {
     const [selectedCourse, setSelectedCourse] = React.useState<string | number>("");
@@ -27,14 +28,10 @@ const StudentFeedback: React.FC = () => {
 
     return (
         <div>
-            <div className="mb-6">
-                <h1 className="text-2xl font-bold text-text-main sm:text-3xl">
-                    Student Feedback
-                </h1>
-                <p className="text-text-muted mt-1">
-                    Share your thoughts and help us improve
-                </p>
-            </div>
+            <BaseHeader
+                heading="Feedback"
+                text="Share your thoughts and help us improve"
+            />
 
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

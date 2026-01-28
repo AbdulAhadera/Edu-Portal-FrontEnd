@@ -1,3 +1,4 @@
+import BaseHeader from "../../components/BaseHeader.tsx";
 import StudentCourseCard from "../../components/StudentCourseCard.tsx";
 
 export interface CourseCard {
@@ -12,10 +13,10 @@ export interface CourseCard {
 const StudentCourse: React.FC = () => {
     return (
         <div>
-            <div className="mb-6">
-                <h1 className="text-2xl font-bold text-text-main  sm:text-3xl">My Courses</h1>
-                <p className="text-text-muted mt-1">Continue learning and track your progress</p>
-            </div>
+            <BaseHeader
+                heading="My Courses"
+                text="Continue learning and track your progress"
+            />
 
             <div className="">
                 <StudentCourseCard />

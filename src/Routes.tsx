@@ -1,7 +1,10 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout.tsx";
-import { StudentCourse, StudentDashboard, StudentAssignment, StudentGrade, StudentAttendance, StudentResource, StudentFeedback, StudentNotifications, StudentHomework, StudentAccount } from "./pages/index.ts";
-import StudentProfile from "./pages/studentPages/StudentProfile.tsx";
+import {
+  StudentCourse, StudentDashboard, StudentAssignment, StudentGrade, StudentAttendance, StudentResource, StudentFeedback, StudentNotifications, StudentHomework, StudentAccount, StudentProfile
+} from "./pages/index.ts";
+
+import { TeacherDashboard } from "./pages/index.ts";
 
 
 const Router: React.FC = () => {
@@ -24,10 +27,10 @@ const Router: React.FC = () => {
         <Route path="accounts" element={<StudentAccount />} />
       </Route>
 
-
-      <Route path="/student" element={<Layout role="student" />} />
-
-      <Route path="/teacher" element={<Layout role="teacher" />} />
+      {/* Teacher Routes */}
+      <Route path="/teacher" element={<Layout role="teacher" />} >
+        <Route path="" element={<TeacherDashboard />} />
+      </Route>
 
       <Route path="/admin" element={<Layout role="admin" />} />
 

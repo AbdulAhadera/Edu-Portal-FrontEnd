@@ -6,6 +6,7 @@ import {
     Megaphone,
     CheckCheck
 } from 'lucide-react';
+import BaseHeader from '../../components/BaseHeader';
 
 
 export interface notification {
@@ -57,14 +58,12 @@ const StudentsNotifications: React.FC = () => {
         <div>
             {/* Header */}
             <div className="mb-6 flex items-center justify-between">
-                <div>
-                    <h1 className="text-3xl font-bold">Notifications</h1>
-                    <p className="text-text-muted mt-1">
-                        {unreadCount > 0
-                            ? `You have ${unreadCount} unread notification${unreadCount > 1 ? 's' : ''}`
-                            : 'All caught up'}
-                    </p>
-                </div>
+                <BaseHeader
+                    heading="Notififcations"
+                    text={unreadCount > 0
+                        ? `You have ${unreadCount} unread notification${unreadCount > 1 ? 's' : ''}`
+                        : 'All caught up'}
+                />
 
                 {unreadCount > 0 && (
                     <button

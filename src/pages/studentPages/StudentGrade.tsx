@@ -1,16 +1,17 @@
 
 import { Award, TrendingUp } from "lucide-react";
 import GradeCard from "../../components/GradeCard.tsx";
+import BaseHeader from "../../components/BaseHeader.tsx";
 
 
 const StudentGrade: React.FC = () => {
 
     return (
         <div>
-            <div className="mb-6">
-                <h1 className="text-2xl font-bold text-text-main  sm:text-3xl">Grades & Progress</h1>
-                <p className="text-text-muted mt-1">Track your academic performance</p>
-            </div>
+            <BaseHeader
+                heading="Grades & Performance"
+                text="Track your Grade and Performance"
+            />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <div className="bg-linear-to-br from-blue-500 to-blue-600 rounded-sm p-6 text-white">

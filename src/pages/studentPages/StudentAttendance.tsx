@@ -4,6 +4,7 @@ import { attendanceData } from '../../data/mockData';
 import type { AttendanceStatus } from '../../types/index';
 import { TrendingUp, Check, X } from 'lucide-react';
 import RangeBar from '../../components/RangeBar';
+import BaseHeader from '../../components/BaseHeader';
 
 interface AttendanceRecord {
   date: string;
@@ -76,12 +77,10 @@ const StudentAttendance: React.FC = () => {
     <div className="bg-page">
       <div className="max-w-7xl mx-auto">
 
-        <div className="mb-6">
-          <h1 className="text-3xl font-bold text-text-main">Attendance</h1>
-          <p className="text-text-muted mt-1">
-            View your attendance records
-          </p>
-        </div>
+        <BaseHeader
+          heading="Attendance"
+          text="View your Attendance Records"
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
