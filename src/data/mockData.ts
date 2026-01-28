@@ -16,107 +16,19 @@ import {
     CheckSquare,
     ClipboardCheck,
     BookCopy,
-    FileUserIcon
+    FileUserIcon,
+    Megaphone,
+    AlertTriangle,
+    Info,
+    CalendarDays
 } from "lucide-react";
-import type { JSX } from "react";
 
-// --- Types ---
-
-export type UserRole = 'student' | 'teacher' | 'admin';
-
-export type LayoutItem = {
-    id: string;
-    label: string;
-    icon: React.ComponentType;
-};
-
-export type DashboardCard = {
-    id: string;
-    title: string;
-    value: string | number;
-    icon: React.ComponentType;
-    iconColor: string;
-    bgColor: string;
-};
-
-export type CourseCardData = {
-    id: number;
-    title: string;
-    description: string;
-    instructor: string;
-    duration: string;
-    image: string;
-    barColor: string;
-    courseMaterial?: object;
-};
-
-export type AssignmentData = {
-    id: string;
-    assignNo: number;
-    courseId: number;
-    courseTitle: string;
-    assignmentTitle: string;
-    assignmentSolution: string;
-    addedSubmission?: string | null;
-    marksObtained?: number | null;
-    comments?: string | null;
-    deadline: string;
-    extendedDeadline?: string;
-    status: 'Pending' | 'Submitted' | 'Late' | 'Graded';
-};
-
-export type AttendanceStatus = 'present' | 'absent' | undefined;
-
-export type Column<T> = {
-    header: string | number;
-    key?: keyof T;
-    render?: (value: any, row: T) => JSX.Element;
-};
-
-export type DataTableProps<T> = {
-    rows: T[];
-    columns?: Column<T>[];
-};
-
-export type DropdownOption = {
-    label: string;
-    value: string | number;
-};
-
-export type DropdownProps = {
-    options: DropdownOption[];
-    value?: string | number;          // currently selected value
-    onChange: (value: string | number) => void;
-    placeholder?: string;
-    className?: string;               // optional tailwind / custom styling
-};
-
-export type Homework = {
-    id: number;
-    subject: string;
-    title: string;
-    description: string;
-    assignedDate: string;
-    dueDate: string;
-    status: 'pending' | 'completed' | 'overdue';
-    attachments: string[];
-};
+import type { notifications, Homework, AssignmentData, CourseCardData, DashboardCard, UserRole, LayoutItem } from "../types/index.ts"
 
 
-//  --- Interfaces ---
-export interface AttendanceRecord {
-    date: string;
-    status: AttendanceStatus;
-}
+// --- Data Constants ---
 
-export interface notification {
-    id: string;
-    type: 'assignment' | 'quiz' | 'announcement';
-    title: string;
-    message: string;
-    date: string;
-    read: boolean;
-}
+
 
 export const notificationData: notification[] = [
     {
@@ -152,10 +64,6 @@ export const notificationData: notification[] = [
         read: true
     }
 ];
-
-
-// --- Data Constants ---
-
 
 export const feesData = {
     monthlyFee: 5000,
@@ -714,10 +622,53 @@ export const dashboardStats: DashboardCard[] = [
     }
 ];
 
+export const announcementsData = [
+    {
+        id: "1",
+        title: "Fee deadline extended",
+        message: "January fees ab 30 Jan 2026 tak submit ki ja sakti hain.",
+        icon: Megaphone,
+        type: "warning",
+        isNew: true,
+        color: "text-yellow-600",
+        bgColor: "bg-yellow-50 dark:bg-yellow-500/10",
+    },
+    {
+        id: "2",
+        title: "Mid-term schedule released",
+        message: "Mid-term exams ka schedule portal par upload kar diya gaya hai.",
+        icon: CalendarDays,
+        type: "info",
+        isNew: true,
+        color: "text-blue-600",
+        bgColor: "bg-blue-50 dark:bg-blue-500/10",
+    },
+    {
+        id: "3",
+        title: "Library timing update",
+        message: "Library ab weekdays mein 8:00 AM se 8:00 PM tak open rahegi.",
+        icon: Info,
+        type: "info",
+        isNew: false,
+        color: "text-blue-600",
+        bgColor: "bg-blue-50 dark:bg-blue-500/10",
+    },
+    {
+        id: "4",
+        title: "System maintenance notice",
+        message: "Portal 14 Jan ko 12:00 AM se 3:00 AM tak unavailable rahega.",
+        icon: AlertTriangle,
+        type: "danger",
+        isNew: false,
+        color: "text-red-600",
+        bgColor: "bg-red-50 dark:bg-red-500/10",
+    },
+];
+
 // Role-based Sidebar Navigation
 export const roleSideBarItems: Record<UserRole, LayoutItem[]> = {
     student: [
-        { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
+        { id: "", label: "Dashboard", icon: LayoutDashboard },
         { id: "mycourse", label: "My Courses", icon: BookCopy },
         { id: "assignments", label: "Assignments", icon: ClipboardList },
         { id: "homework", label: "Daily Homework", icon: ClipboardCheck },

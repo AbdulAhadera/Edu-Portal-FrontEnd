@@ -1,10 +1,16 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import type { AttendanceStatus } from '../../src/data/mockData';
+import type { AttendanceStatus } from '../../src/types/index.ts';
 
 interface CalendarProps {
   currentMonth: Date;
   onMonthChange: (date: Date) => void;
   attendanceMap: Record<string, AttendanceStatus>;
+}
+
+
+export interface AttendanceRecord {
+  date: string;
+  status: AttendanceStatus;
 }
 
 const AttendanceCalendar = ({
@@ -46,7 +52,7 @@ const AttendanceCalendar = ({
   });
 
   return (
-    <div className="bg-card border border-ui-border rounded-2xl p-6 w-full">
+    <div className="bg-card border border-ui-border rounded-none p-6 w-full">
       <div className="flex justify-between mb-8">
         <h2 className="text-2xl font-bold text-text-main">
           {monthName}

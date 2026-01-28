@@ -14,7 +14,7 @@ const Input: React.FC<InputProps> = ({ label, error, className, ...rest }) => {
                 </label>
             )}
             <input
-                className={`border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${error ? "border-danger" : "border-ui-border"} ${className}`}
+                className={`border rounded-sm focus:outline-none focus:ring-2 focus:ring-primary ${error ? "border-danger" : "border-ui-border"} ${className}`}
                 {...rest}
             />
             {error && <span className="text-sm text-danger mt-1">{error}</span>}

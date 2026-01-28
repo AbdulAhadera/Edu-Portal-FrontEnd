@@ -2,9 +2,10 @@ import { useState, useMemo } from "react";
 import DataTable from "../../components/DataTable.tsx";
 import {
     courses,
-    studentAssignments, type AssignmentData,
+    studentAssignments
 } from "../../data/mockData";
 import Input from "../../components/Input.tsx"
+import type { AssignmentData } from "../../types/index.ts";
 
 
 // defining columns here.
@@ -38,7 +39,7 @@ const assignmentColumns = [
                 className={`py-1 rounded-full text-xs font-medium ${value === "Graded"
                     ? "bg-green-500/10 text-green-500 px-4"
                     : value === "Submitted"
-                        ? "bg-blue-500/10 text-blue-500"
+                        ? "bg-blue-500/10 text-blue-500 px-2"
                         : value === "Late"
                             ? "bg-red-500/10 text-red-500 px-6"
                             : "bg-yellow-500/10 text-yellow-500 px-3"
@@ -155,7 +156,7 @@ const StudentAssignment: React.FC = () => {
                         <button
                             key={course.id}
                             onClick={() => setSelectedCourseId(course.id)}
-                            className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition ${selectedCourseId === course.id
+                            className={`px-4 py-2 rounded-sm text-sm font-medium whitespace-nowrap transition ${selectedCourseId === course.id
                                 ? "bg-primary text-white"
                                 : "bg-card border border-ui-border text-text-muted hover:bg-ui-hover"
                                 }`}

@@ -20,7 +20,7 @@ const StudentProfile: React.FC = () => {
         <div>
             <h2 className="text-3xl font-bold text-text-main mb-6">Student Profile</h2>
 
-            <div className="bg-card rounded-lg shadow-sm border border-ui-border">
+            <div className="bg-card rounded-sm shadow-sm border border-ui-border">
                 <div className="bg-linear-to-r from-primary to-primary/90 rounded-t-lg p-6">
                     <div className="flex items-center space-x-4">
                         <div className="bg-card rounded-full p-3">

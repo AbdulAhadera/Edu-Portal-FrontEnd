@@ -41,7 +41,7 @@ const StudentResource: React.FC = () => {
                         <button
                             key={course.id}
                             onClick={() => setSelectedCourseId(course.id)}
-                            className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition ${selectedCourseId === course.id
+                            className={`px-4 py-2 rounded-sm text-sm font-medium whitespace-nowrap transition ${selectedCourseId === course.id
                                 ? "bg-primary text-white"
                                 : "bg-card border border-ui-border text-text-muted hover:bg-ui-hover"
                                 }`}

@@ -38,7 +38,7 @@ const StudentFeedback: React.FC = () => {
 
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="bg-card rounded-xl shadow-sm border border-ui-hover p-4">
+                <div className="bg-card rounded-sm shadow-sm border border-ui-hover p-4">
                     <h2 className="text-xl font-bold text-text-main mb-4">Course Feedback</h2>
                     <form onSubmit={handleSubmit}>
                         <Dropdown
@@ -60,7 +60,7 @@ const StudentFeedback: React.FC = () => {
                                         key={star}
                                         type="button"
                                         onClick={() => setRating(star)}
-                                        className={`p-2 rounded-lg transition-colors ${star <= rating
+                                        className={`p-2 rounded-sm transition-colors ${star <= rating
                                             ? 'text-yellow-500'
                                             : 'text-gray-300 hover:text-yellow-400'
                                             }`}
@@ -79,7 +79,7 @@ const StudentFeedback: React.FC = () => {
                                 value={feedback}
                                 onChange={(e) => setFeedback(e.target.value)}
                                 rows={6}
-                                className="w-full px-4 py-2 border-2 text-text-main border-ui-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="w-full px-4 py-2 border-2 text-text-main border-ui-border rounded-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                 placeholder="Share your thoughts about the course, instructor, materials, or anything else..."
                                 required
                             />
@@ -91,7 +91,7 @@ const StudentFeedback: React.FC = () => {
                     </form>
                 </div>
                 <div className="space-y-6">
-                    <div className="bg-linear-to-br from-primary to-primary/90 rounded-xl p-6 text-white shadow-lg">
+                    <div className="bg-linear-to-br from-primary to-primary/90 rounded-sm p-6 text-white shadow-lg">
                         <h3 className="text-lg font-bold mb-2">Why Your Feedback Matters</h3>
                         <ul className="space-y-2 text-blue-100 text-sm">
                             <li className="flex items-start gap-2">

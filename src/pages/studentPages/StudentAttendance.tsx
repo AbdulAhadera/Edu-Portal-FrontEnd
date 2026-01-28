@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import AttendanceCalendar from '../../components/AttendanceCalendar';
 import { attendanceData } from '../../data/mockData';
-import type { AttendanceStatus } from '../../data/mockData';
+import type { AttendanceStatus } from '../../types/index';
 import { TrendingUp, Check, X } from 'lucide-react';
 import RangeBar from '../../components/RangeBar';
 
@@ -88,7 +88,7 @@ const StudentAttendance: React.FC = () => {
           {/* Stats */}
           <div className="space-y-6">
 
-            <div className="bg-card border border-ui-border rounded-2xl p-8">
+            <div className="bg-card border border-ui-border rounded-sm p-8">
               <div className="flex justify-between mb-4">
                 <span className="text-text-muted text-sm uppercase">
                   Overall
@@ -105,7 +105,7 @@ const StudentAttendance: React.FC = () => {
 
             <div className="grid grid-cols-2 gap-4">
 
-              <div className="bg-card border border-ui-border rounded-xl p-6">
+              <div className="bg-card border border-ui-border rounded-sm p-6">
                 <Check className="w-6 h-6 text-primary mb-3" />
                 <div className="text-3xl font-bold text-text-main">
                   {stats.presentCount}
@@ -115,7 +115,7 @@ const StudentAttendance: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-card border border-ui-border rounded-xl p-6">
+              <div className="bg-card border border-ui-border rounded-sm p-6">
                 <X className="w-6 h-6 text-danger mb-3" />
                 <div className="text-3xl font-bold text-text-main">
                   {stats.absentCount}
@@ -125,7 +125,7 @@ const StudentAttendance: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-card border border-ui-border rounded-xl p-6 col-span-2">
+              <div className="bg-card border border-ui-border rounded-sm p-6 col-span-2">
                 <div className="text-3xl font-bold text-text-main">
                   {stats.noRecordCount}
                 </div>

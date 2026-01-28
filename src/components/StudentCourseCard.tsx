@@ -14,7 +14,7 @@ const StudentCourseCard: React.FC = () => {
             {courses.map((course) => (
                 <div
                     key={course.id}
-                    className="bg-card rounded-xl shadow-sm border border-ui-hover overflow-hidden hover:shadow-md transition-shadow"
+                    className="bg-card rounded-sm shadow-sm border border-ui-hover overflow-hidden hover:shadow-md transition-shadow"
                 >
                     <img
                         src={course.image}

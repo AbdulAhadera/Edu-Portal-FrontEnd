@@ -46,7 +46,7 @@ const Layout = ({ role }: LayoutProps) => {
             <div className="fixed top-0 left-0 right-0 h-16 bg-card border-b border-ui-border z-30 flex items-center px-4 lg:px-6">
                 <button
                     onClick={() => setSidebarOpen(!sidebarOpen)}
-                    className="text lg:hidden mr-4 p-2 hover:bg-ui-hover rounded-lg"
+                    className="text lg:hidden mr-4 p-2 hover:bg-ui-hover rounded-sm"
                 >
                     {sidebarOpen ? <X size={24} className='text-text-main' /> : <Menu size={24} className="text-text-main" />}
                 </button>
@@ -68,7 +68,7 @@ const Layout = ({ role }: LayoutProps) => {
 
                 <button
                     onClick={toggleTheme}
-                    className="p-2 hover:bg-ui-hover rounded-lg mr-2 text-text-muted transition-all"
+                    className="p-2 hover:bg-ui-hover rounded-sm mr-2 text-text-muted transition-all"
                 >
                     {isDark ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} />}
                 </button>
@@ -76,7 +76,7 @@ const Layout = ({ role }: LayoutProps) => {
 
                 <button
                     onClick={() => handleNavigate('notifications')}
-                    className="relative text-text-muted p-2 hover:bg-ui-hover rounded-lg mr-2"
+                    className="relative text-text-muted p-2 hover:bg-ui-hover rounded-sm mr-2"
                 >
                     <Bell size={20} />
                     <span className="absolute top-1 right-1 w-2 h-2 bg-danger rounded-full"></span>
@@ -85,7 +85,7 @@ const Layout = ({ role }: LayoutProps) => {
 
                 <button
                     onClick={() => handleNavigate('profile')}
-                 className="flex items-center text-text-muted gap-2 p-2 hover:bg-ui-hover rounded-lg">
+                 className="flex items-center text-text-muted gap-2 p-2 hover:bg-ui-hover rounded-sm">
                     <UserCircle size={24} />
                     <span className="hidden sm:inline text-sm font-medium">Alex Morgan</span>
                 </button>
@@ -114,9 +114,9 @@ const Layout = ({ role }: LayoutProps) => {
                             <button
                                 key={item.id}
                                 onClick={() => handleNavigate(item.id)}
-                                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive
+                                className={`w-full flex items-center gap-3 px-4 py-3 rounded-sm transition-colors ${isActive
                                     ? 'bg-primary-muted text-primary font-medium'
-                                    : 'text-text-muted hover:bg-page'
+                                    : 'text-text-main hover:bg-page'
                                     }`}
                             >
                                 <Icon size={20} />

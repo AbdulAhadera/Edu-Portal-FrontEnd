@@ -3,12 +3,22 @@ import { notificationData } from '../../data/mockData';
 import {
     Bell,
     ClipboardList,
-    ClipboardCheck,
     Megaphone,
     CheckCheck
 } from 'lucide-react';
 
+
+export interface notification {
+    id: string;
+    type: 'assignment' | 'quiz' | 'announcement';
+    title: string;
+    message: string;
+    date: string;
+    read: boolean;
+}
+
 const StudentsNotifications: React.FC = () => {
+
     const [notifications, setNotifications] = useState(notificationData);
     const [filter, setFilter] = useState<
         'all' | 'unread' | 'assignment' | 'announcement'
@@ -59,7 +69,7 @@ const StudentsNotifications: React.FC = () => {
                 {unreadCount > 0 && (
                     <button
                         onClick={markAllAsRead}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-white hover:opacity-90 transition"
+                        className="flex items-center gap-2 px-4 py-2 rounded-sm bg-primary text-white hover:opacity-90 transition"
                     >
                         <CheckCheck size={18} />
                         Mark all as read
@@ -68,13 +78,13 @@ const StudentsNotifications: React.FC = () => {
             </div>
 
             {/* Filters */}
-            <div className="bg-card border border-ui-border rounded-xl p-2 mb-6">
+            <div className="bg-card border border-ui-border rounded-sm p-2 mb-6">
                 <div className="flex flex-wrap gap-2">
                     {['all', 'unread', 'assignment', 'announcement'].map(status => (
                         <button
                             key={status}
                             onClick={() => setFilter(status as any)}
-                            className={`px-4 py-2 rounded-lg font-medium capitalize transition
+                            className={`px-4 py-2 rounded-sm font-medium capitalize transition
                 ${filter === status
                                     ? 'bg-primary text-white'
                                     : 'bg-ui-hover text-text-muted hover:text-text-main'
@@ -92,14 +102,14 @@ const StudentsNotifications: React.FC = () => {
                     <div
                         key={notification.id}
                         onClick={() => markAsRead(notification.id)}
-                        className={`rounded-xl p-4 border cursor-pointer transition
+                        className={`rounded-sm p-4 border cursor-pointer transition
               ${notification.read
                                 ? 'bg-card border-ui-border'
                                 : 'bg-primary-muted border-primary'
                             }`}
                     >
                         <div className="flex items-start gap-4">
-                            <div className="p-3 rounded-lg bg-card border border-ui-border">
+                            <div className="p-3 rounded-sm bg-card border border-ui-border">
                                 {getNotificationIcon(notification.type)}
                             </div>
 

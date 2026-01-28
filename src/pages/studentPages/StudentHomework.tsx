@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Homework } from "../../data/mockData";
+import type { Homework } from "../../types/index";
 import { homeworkData } from "../../data/mockData";
 import { Calendar, AlertCircle, GripVertical } from "lucide-react";
 
@@ -46,7 +46,7 @@ const StudentHomework: React.FC = () => {
       <div className="flex flex-col lg:flex-row gap-4">
         {/* To Do Column */}
         <div
-          className="w-full lg:w-1/2 bg-card p-4 rounded-lg space-y-3 h-auto shadow-sm"
+          className="w-full lg:w-1/2 bg-card p-4 rounded-sm space-y-3 h-auto shadow-sm"
           onDragOver={e => e.preventDefault()}
           onDrop={() => handleDrop("todo")}
         >
@@ -84,7 +84,7 @@ const StudentHomework: React.FC = () => {
 
         {/* Done Column */}
         <div
-          className="w-full lg:w-1/2 bg-primary/20 p-4 rounded-lg space-y-3 min-h-[400px] shadow-sm"
+          className="w-full lg:w-1/2 bg-primary/20 p-4 rounded-sm space-y-3 min-h-[400px] shadow-sm"
           onDragOver={e => e.preventDefault()}
           onDrop={() => handleDrop("done")}
         >

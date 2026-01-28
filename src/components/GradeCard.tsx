@@ -14,7 +14,7 @@ const GradeCard: React.FC = () => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-            <div className="bg-card rounded-xl shadow-sm border border-ui-border overflow-scroll">
+            <div className="bg-card rounded-sm shadow-sm border border-ui-border overflow-scroll">
 
                 {/* Header */}
                 <div className="bg-primary-muted py-2 px-4 border-b border-ui-border">
@@ -45,12 +45,12 @@ const GradeCard: React.FC = () => {
                             </h4>
 
                             <div className="space-y-1">
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">{"Assignment 1".slice(0, 5)}...</span>
                                     <span className="font-semibold text-text-main">85/100</span>
                                 </div>
 
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">Assignment 2</span>
                                     <span className="font-semibold text-text-main">90/100</span>
                                 </div>
@@ -64,12 +64,12 @@ const GradeCard: React.FC = () => {
                             </h4>
 
                             <div className="space-y-1">
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">Test 1</span>
                                     <span className="font-semibold text-text-main">18/20</span>
                                 </div>
 
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">Test 2</span>
                                     <span className="font-semibold text-text-main">15/20</span>
                                 </div>
@@ -101,7 +101,7 @@ const GradeCard: React.FC = () => {
                 </div>
             </div>
 
-            <div className="bg-card rounded-xl shadow-sm border border-ui-border overflow-scroll">
+            <div className="bg-card rounded-sm shadow-sm border border-ui-border overflow-scroll">
 
                 {/* Header */}
                 <div className="bg-primary-muted py-2 px-4 border-b border-ui-border">
@@ -132,12 +132,12 @@ const GradeCard: React.FC = () => {
                             </h4>
 
                             <div className="space-y-1">
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">{"Assignment 1".slice(0, 5)}...</span>
                                     <span className="font-semibold text-text-main">85/100</span>
                                 </div>
 
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">Assignment 2</span>
                                     <span className="font-semibold text-text-main">90/100</span>
                                 </div>
@@ -151,12 +151,12 @@ const GradeCard: React.FC = () => {
                             </h4>
 
                             <div className="space-y-1">
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">Test 1</span>
                                     <span className="font-semibold text-text-main">18/20</span>
                                 </div>
 
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">Test 2</span>
                                     <span className="font-semibold text-text-main">15/20</span>
                                 </div>
@@ -189,7 +189,7 @@ const GradeCard: React.FC = () => {
             </div>
 
 
-            <div className="bg-card rounded-xl shadow-sm border border-ui-border overflow-scroll">
+            <div className="bg-card rounded-sm shadow-sm border border-ui-border overflow-scroll">
 
                 {/* Header */}
                 <div className="bg-primary-muted py-2 px-4 border-b border-ui-border">
@@ -220,12 +220,12 @@ const GradeCard: React.FC = () => {
                             </h4>
 
                             <div className="space-y-1">
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">{"Assignment 1".slice(0, 5)}...</span>
                                     <span className="font-semibold text-text-main">85/100</span>
                                 </div>
 
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">Assignment 2</span>
                                     <span className="font-semibold text-text-main">90/100</span>
                                 </div>
@@ -239,12 +239,12 @@ const GradeCard: React.FC = () => {
                             </h4>
 
                             <div className="space-y-1">
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">Test 1</span>
                                     <span className="font-semibold text-text-main">18/20</span>
                                 </div>
 
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">Test 2</span>
                                     <span className="font-semibold text-text-main">15/20</span>
                                 </div>
@@ -276,7 +276,7 @@ const GradeCard: React.FC = () => {
                 </div>
             </div>
             
-            <div className="bg-card rounded-xl shadow-sm border border-ui-border overflow-scroll">
+            <div className="bg-card rounded-sm shadow-sm border border-ui-border overflow-scroll">
 
                 {/* Header */}
                 <div className="bg-primary-muted py-2 px-4 border-b border-ui-border">
@@ -307,12 +307,12 @@ const GradeCard: React.FC = () => {
                             </h4>
 
                             <div className="space-y-1">
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">{"Assignment 1".slice(0, 5)}...</span>
                                     <span className="font-semibold text-text-main">85/100</span>
                                 </div>
 
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">Assignment 2</span>
                                     <span className="font-semibold text-text-main">90/100</span>
                                 </div>
@@ -326,12 +326,12 @@ const GradeCard: React.FC = () => {
                             </h4>
 
                             <div className="space-y-1">
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">Test 1</span>
                                     <span className="font-semibold text-text-main">18/20</span>
                                 </div>
 
-                                <div className="flex items-center justify-between p-2 bg-page rounded-lg border border-ui-border">
+                                <div className="flex items-center justify-between p-2 bg-page rounded-sm border border-ui-border">
                                     <span className="text-text-muted">Test 2</span>
                                     <span className="font-semibold text-text-main">15/20</span>
                                 </div>

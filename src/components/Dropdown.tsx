@@ -1,12 +1,12 @@
 import React from "react";
-import type { DropdownProps } from "../data/mockData";
+import type { DropdownProps } from "../../src/types/index.ts";
 
 const Dropdown: React.FC<DropdownProps> = ({ options, value, onChange, placeholder = "Select...", className }) => {
     return (
         <select
             value={value ?? ""}
             onChange={(e) => onChange(e.target.value)}
-            className={`border bg-card text-text-main rounded-lg px-3 py-2 focus:outline-none focus:ring ${className ?? ""}`}
+            className={`border bg-card text-text-main rounded-sm px-3 py-2 focus:outline-none focus:ring ${className ?? ""}`}
         >
             <option
             className="text-text-main"
