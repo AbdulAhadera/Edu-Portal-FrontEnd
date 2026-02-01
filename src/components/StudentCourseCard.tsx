@@ -27,6 +27,7 @@ const StudentCourseCard: React.FC = () => {
                         <Button
                             text="View Course"
                             onClick={courseDetailsModal}
+                            className="bg-primary w-full py-2"
                         />
                     </div>
                 </div>

@@ -10,7 +10,7 @@ const Button = ({ text, onClick, type = "button", className="" }: ButtonProps) =
         <button
             type={type}            // ✅ now TS is happy
             onClick={onClick}
-            className={`w-full mt-4 text-center bg-primary text-button font-medium py-2 px-4 rounded-sm hover:bg-primary-dark transition-colors cursor-pointer ${className}`} >
+            className={`text-center text-button font-medium rounded-sm cursor-pointer ${className}`} >
             {text}
         </button>
     );

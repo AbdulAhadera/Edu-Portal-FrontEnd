@@ -26,9 +26,7 @@ import {
 import type { notifications, Homework, AssignmentData, CourseCardData, DashboardCard, UserRole, LayoutItem } from "../types/index.ts"
 
 
-// --- Data Constants ---
-
-
+// --- Student Data Constants ---
 
 export const notificationData: notification[] = [
     {
@@ -587,7 +585,7 @@ export const courses: CourseCardData[] = [
     },
 ];
 
-export const dashboardStats: DashboardCard[] = [
+export const studentDashboardStats: DashboardCard[] = [
     {
         id: "enrolledCourses",
         title: "Enrolled Courses",
@@ -665,6 +663,91 @@ export const announcementsData = [
     },
 ];
 
+
+// --- Teacher Data Constant ---
+
+export const teacherDashboardStats: DashboardCard[] = [
+    {
+        id: "enrolledCourses",
+        title: "Enrolled Courses",
+        value: 5,
+        icon: BookCopy,
+        iconColor: "text-blue-600",
+        bgColor: "bg-blue-50 dark:bg-blue-900/20"
+    },
+    {
+        id: "pendingGradingAssignments",
+        title: "Pending Grading Assignments",
+        value: 2,
+        icon: ClipboardList,
+        iconColor: "text-orange-600",
+        bgColor: "bg-orange-50 dark:bg-orange-900/20"
+    },
+    {
+        id: "performance",
+        title: "Performance",
+        value: "85%",
+        icon: BarChart3,
+        iconColor: "text-green-600",
+        bgColor: "bg-green-50 dark:bg-green-900/20"
+    },
+    {
+        id: "attendance",
+        title: "Attendance",
+        value: "92%",
+        icon: UserCheck,
+        iconColor: "text-purple-600",
+        bgColor: "bg-purple-50 dark:bg-purple-900/20"
+    }
+];
+
+export const teacherClasses = [
+    { id: 1, name: 'Mathematics 101', section: 'Section A', students: 32, color: 'bg-blue-100' },
+    { id: 2, name: 'Physics Advanced', section: 'Section B', students: 28, color: 'bg-green-100' },
+    { id: 3, name: 'Chemistry Fundamentals', section: 'Section C', students: 30, color: 'bg-orange-100' },
+    { id: 4, name: 'Biology Lab', section: 'Section A', students: 25, color: 'bg-teal-100' },
+];
+
+export const teacherAssignments = [
+    {
+        id: 1,
+        title: 'Calculus Problem Set 3',
+        class: 'Mathematics 101',
+        dueDate: '2026-01-28',
+        totalSubmissions: 32,
+        submitted: 28,
+        late: 2,
+        missing: 2,
+        graded: 20,
+    },
+    {
+        id: 2,
+        title: 'Newton Laws Essay',
+        class: 'Physics Advanced',
+        dueDate: '2026-01-30',
+        totalSubmissions: 28,
+        submitted: 25,
+        late: 1,
+        missing: 2,
+        graded: 15,
+    },
+    {
+        id: 3,
+        title: 'Periodic Table Quiz',
+        class: 'Chemistry Fundamentals',
+        dueDate: '2026-01-25',
+        totalSubmissions: 30,
+        submitted: 30,
+        late: 0,
+        missing: 0,
+        graded: 30,
+    },
+];
+
+
+
+
+
 // Role-based Sidebar Navigation
 export const roleSideBarItems: Record<UserRole, LayoutItem[]> = {
     student: [
@@ -680,14 +763,15 @@ export const roleSideBarItems: Record<UserRole, LayoutItem[]> = {
         { id: "feedback", label: "Feedback", icon: FileText }
     ],
     teacher: [
-        { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+        { id: '', label: 'Dashboard', icon: LayoutDashboard },
         { id: 'classes', label: 'Classes', icon: BookOpen },
         { id: 'assignments', label: 'Assignments', icon: FileText },
         { id: 'quizzes', label: 'Quizzes', icon: ClipboardList },
         { id: 'grades', label: 'Grades', icon: GraduationCap },
         { id: 'attendance', label: 'Attendance', icon: CheckSquare },
-        { id: 'discussions', label: 'Discussions', icon: MessageSquare },
-        { id: 'calendar', label: 'Calendar', icon: Calendar },
+        // { id: 'discussions', label: 'Discussions', icon: MessageSquare },
+        { id: "accounts", label: "Accounts", icon: FileUserIcon },
+        // { id: 'calendar', label: 'Calendar', icon: Calendar },
         { id: 'resources', label: 'Resources', icon: FolderOpen },
     ],
     admin: [
@@ -698,5 +782,7 @@ export const roleSideBarItems: Record<UserRole, LayoutItem[]> = {
         { id: 'roles', label: 'Roles & Permissions', icon: Shield },
         { id: 'reports', label: 'Reports & Logs', icon: FileText },
         { id: 'settings', label: 'System Settings', icon: Settings },
+        { id: "feedback", label: "Feedback", icon: FileText }
     ]
 };
+

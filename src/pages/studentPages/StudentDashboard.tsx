@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import CardPrimary from "../../components/CardPrimary";
-import { dashboardStats, announcementsData, studentAssignments } from "../../data/mockData";
+import { studentDashboardStats, announcementsData, studentAssignments } from "../../data/mockData";
 import BaseHeader from "../../components/BaseHeader";
 
 const StudentDashboard: React.FC = () => {
@@ -23,7 +23,7 @@ const StudentDashboard: React.FC = () => {
 
       {/* Dashboard Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-3">
-        {dashboardStats.map((card) => (
+        {studentDashboardStats.map((card) => (
           <CardPrimary key={card.id} data={card} />
         ))}
       </div>
@@ -77,7 +77,7 @@ const StudentDashboard: React.FC = () => {
         <div className="bg-card p-3 rounded-sm border border-ui-border shadow-sm w-full md:w-1/3">
           <div className="flex justify-between items-center mb-3">
             <h3 className="text-lg font-semibold text-text-main">Incomplete Assignments</h3>
-            <Button text="View All" className="max-w-fit" onClick={() => navigate("assignments")} />
+            <Button text="View All" className="max-w-fit text-primary hover:underline" onClick={() => navigate("assignments")} />
           </div>
 
           <div className="space-y-2 max-h-88 overflow-y-auto hide-scrollbar">

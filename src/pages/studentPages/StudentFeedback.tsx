@@ -83,6 +83,7 @@ const StudentFeedback: React.FC = () => {
                             <Button
                                 text="Submit Feedback"
                                 type='submit'
+                                className='w-full bg-primary py-2'
                             />
                         </div>
                     </form>

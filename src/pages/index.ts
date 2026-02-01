@@ -15,10 +15,24 @@ import StudentProfile from "./studentPages/StudentProfile";
 
 // Teacher Import
 import TeacherDashboard from "./teacherPages/TeacherDashboard";
+import TeacherClasses from "./teacherPages/TeacherClasses";
+import TeacherAssignment from "./teacherPages/TeacherAssignment";
+import TeacherGrades from "./teacherPages/TeacherGrades";
+import TeacherNotifications from "./teacherPages/TeacherNotifications";
+import TeacherResources from "./teacherPages/TeacherResources";
+import TeacherAttendance from "./teacherPages/TeacherAttendance";
+import TeacherAccount from "./teacherPages/TeacherAccount";
 
 // Teacher Export
 export {
-    TeacherDashboard
+    TeacherDashboard,
+    TeacherClasses,
+    TeacherAssignment,
+    TeacherGrades,
+    TeacherNotifications,
+    TeacherResources,
+    TeacherAttendance,
+    TeacherAccount
 }
 
 // Student Export

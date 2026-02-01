@@ -1,10 +1,15 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout.tsx";
+
+
+import { TeacherDashboard, TeacherClasses, TeacherAssignment, TeacherGrades, TeacherNotifications, TeacherResources, TeacherAttendance, TeacherAccount } from "./pages/index.ts";
+
+
 import {
-  StudentCourse, StudentDashboard, StudentAssignment, StudentGrade, StudentAttendance, StudentResource, StudentFeedback, StudentNotifications, StudentHomework, StudentAccount, StudentProfile
+  StudentCourse, StudentDashboard, StudentAssignment, StudentGrade, StudentAttendance, StudentResource, StudentFeedback, StudentNotifications, StudentHomework, StudentAccount, StudentProfile,
+
 } from "./pages/index.ts";
 
-import { TeacherDashboard } from "./pages/index.ts";
 
 
 const Router: React.FC = () => {
@@ -30,6 +35,13 @@ const Router: React.FC = () => {
       {/* Teacher Routes */}
       <Route path="/teacher" element={<Layout role="teacher" />} >
         <Route path="" element={<TeacherDashboard />} />
+        <Route path="classes" element={<TeacherClasses />} />
+        <Route path="assignments" element={<TeacherAssignment />} />
+        <Route path="grades" element={<TeacherGrades />} />
+        <Route path="notifications" element={<TeacherNotifications />} />
+        <Route path="resources" element={<TeacherResources />} />
+        <Route path="attendance" element={<TeacherAttendance />} />
+        <Route path="accounts" element={<TeacherAccount />} />
       </Route>
 
       <Route path="/admin" element={<Layout role="admin" />} />
