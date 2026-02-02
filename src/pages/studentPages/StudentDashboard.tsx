@@ -77,7 +77,10 @@ const StudentDashboard: React.FC = () => {
         <div className="bg-card p-3 rounded-sm border border-ui-border shadow-sm w-full md:w-1/3">
           <div className="flex justify-between items-center mb-3">
             <h3 className="text-lg font-semibold text-text-main">Incomplete Assignments</h3>
-            <Button text="View All" className="max-w-fit text-primary hover:underline" onClick={() => navigate("assignments")} />
+            <Button
+              text="View All"
+              className="max-w-fit text-primary hover:underline"
+              onClick={() => navigate("assignments")} />
           </div>
 
           <div className="space-y-2 max-h-88 overflow-y-auto hide-scrollbar">

@@ -1,12 +1,14 @@
 import Button from "../components/Button.tsx";
 import RangeBar from "../components/RangeBar.tsx";
 import { courses } from "../../src/data/mockData.ts";
+import { useState } from "react";
 
 
 const StudentCourseCard: React.FC = () => {
 
+
     const courseDetailsModal = () => {
-        console.log('butt sahad')
+        
     }
 
     return (
@@ -23,12 +25,14 @@ const StudentCourseCard: React.FC = () => {
                     <div className="p-3">
                         <h3 className="text-xl font-bold text-text-main mb-2">{course.title}</h3>
                         <p className="text-text-muted text-sm mb-4">{course.instructor}</p>
-                        <RangeBar percent={55} text="Progress" color={course.barColor} />
+                        <RangeBar percent={55} text="Progress" />
+
                         <Button
                             text="View Course"
                             onClick={courseDetailsModal}
                             className="bg-primary w-full py-2"
                         />
+
                     </div>
                 </div>
             ))}

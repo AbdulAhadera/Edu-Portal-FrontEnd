@@ -80,3 +80,10 @@ export type Homework = {
     status: 'pending' | 'completed' | 'overdue';
     attachments: string[];
 };
+
+export type SubjectStudent = {
+    id: number;
+    rollNo: string;
+    name: string;
+    marks: number;
+};

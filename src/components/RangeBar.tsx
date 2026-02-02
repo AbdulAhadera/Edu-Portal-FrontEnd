@@ -16,7 +16,7 @@ const RangeBar: React.FC<RangeBarProps> = ({ percent, text = "Progress", color =
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
-                    className={`${color} h-2 rounded-full transition-all`}
+                    className="bg-primary/50 h-2 rounded-full transition-all" // Gradient use krna hai idhrr
                     style={{ width: `${safePercent}%` }}
                 ></div>
             </div>

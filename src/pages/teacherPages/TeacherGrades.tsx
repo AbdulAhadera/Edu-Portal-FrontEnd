@@ -1,15 +1,46 @@
 import type React from "react"
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import BaseHeader from "../../components/BaseHeader";
-import { teacherClasses, teacherDashboardStats } from "../../data/mockData";
+import { teacherClasses, studentsData } from "../../data/mockData";
 import DataTable from "../../components/DataTable";
 
 const TeacherGrades: React.FC = () => {
 
+    const studentColumns = [
+        {
+            header: "Name",
+            key: "name",
+        },
+        {
+            header: "Performance",
+            key: "performance",
+        },
+        {
+            header: "Roll No",
+            key: "roll",
+        },
+        {
+            header: "Grade",
+            key: "grade",
+        }
+    ];
 
-    const [selectedClass, setSelectedClass] = useState<number>(
-        teacherClasses[0].id
+
+    const [selectedClass, setSelectedClass] = useState<string>(
+        teacherClasses[0].name
     );
+
+    // filter assignments based on selected course
+
+    const filteredClasses = useMemo(
+        () =>
+            studentsData.filter(
+                (stdClass) => stdClass.class === selectedClass
+            ),
+        [selectedClass]
+    );
+
+
 
     return (
         <div>
@@ -22,9 +53,9 @@ const TeacherGrades: React.FC = () => {
                 <div className="flex gap-3 min-w-max pb-2">
                     {teacherClasses.map((cls) => (
                         <button
-                            key={cls.id}
-                            onClick={() => setSelectedClass(cls.id)}
-                            className={`px-4 py-2 rounded-sm text-sm font-medium whitespace-nowrap transition ${selectedClass === cls.id
+                            key={cls.name}
+                            onClick={() => setSelectedClass(cls.name)}
+                            className={`px-4 py-2 rounded-sm text-sm font-medium whitespace-nowrap transition ${fil}
                                 ? "bg-primary text-white"
                                 : "bg-card border border-ui-border text-text-muted hover:bg-ui-hover"
                                 }`}
@@ -36,10 +67,10 @@ const TeacherGrades: React.FC = () => {
             </div>
 
             <div className="bg-card">
-                {/* <DataTable<AssignmentData>
-                    rows={filteredAssignments}
-                    columns={assignmentColumns}
-                /> */}
+                <DataTable
+                    rows={filteredClasses}
+                    columns={studentColumns}
+                />
             </div>
 
         </div>
