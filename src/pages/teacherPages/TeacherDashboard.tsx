@@ -21,7 +21,7 @@ const TeacherDashboard: React.FC = () => {
 
 
             <div className="flex flex-col md:flex-row gap-3">
-                <div className="bg-card p-3 rounded-sm border border-ui-border shadow-sm w-full md:w-2/3">
+                <div className="bg-card p-3 rounded-sm border border-ui-border shadow-sm w-full lg:w-2/3">
                     <div className="flex justify-between">
                         <h3 className="text-xl font-semibold text-text-main mb-3">Announcements</h3>
                         <Button

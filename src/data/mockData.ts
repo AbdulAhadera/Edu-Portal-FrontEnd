@@ -701,7 +701,7 @@ export const teacherDashboardStats: DashboardCard[] = [
     }
 ];
 
-export const teacherClasses = [
+export const teacherClass = [
     { id: 1, name: 'Mathematics 101', section: 'Section A', students: 32, color: 'bg-blue-100' },
     { id: 2, name: 'Physics Advanced', section: 'Section B', students: 28, color: 'bg-green-100' },
     { id: 3, name: 'Chemistry Fundamentals', section: 'Section C', students: 30, color: 'bg-orange-100' },
@@ -746,56 +746,55 @@ export const teacherAssignments = [
 
 
 export const studentsData = [
-    // --- Mathematics 101 ---
-    { name: "Ayaan Khan", class: "Mathematics 101", grade: "A", roll: "01" },
-    { name: "Zara Ahmed", class: "Mathematics 101", grade: "B+", roll: "02" },
-    { name: "Hamza Ali", class: "Mathematics 101", grade: "A-", roll: "03" },
-    { name: "Sana Iqbal", class: "Mathematics 101", grade: "B", roll: "04" },
-    { name: "Danish Riaz", class: "Mathematics 101", grade: "A+", roll: "05" },
-    { name: "Maria Aslam", class: "Mathematics 101", grade: "B", roll: "06" },
-    { name: "Omar Farooq", class: "Mathematics 101", grade: "A", roll: "07" },
-    { name: "Hina Shafiq", class: "Mathematics 101", grade: "B+", roll: "08" },
-    { name: "Ali Rehman", class: "Mathematics 101", grade: "A-", roll: "09" },
-    { name: "Fatima Noor", class: "Mathematics 101", grade: "B", roll: "10" },
+  // --- Mathematics 101 ---
+  { name: "Ayaan Khan", class: "Mathematics 101", grade: "A", roll: "1010" },
+  { name: "Zara Ahmed", class: "Mathematics 101", grade: "B+", roll: "1011" },
+  { name: "Hamza Ali", class: "Mathematics 101", grade: "A-", roll: "1012" },
+  { name: "Sana Iqbal", class: "Mathematics 101", grade: "B", roll: "1013" },
+  { name: "Danish Riaz", class: "Mathematics 101", grade: "A+", roll: "1014" },
+  { name: "Maria Aslam", class: "Mathematics 101", grade: "B+", roll: "1015" },
+  { name: "Omar Farooq", class: "Mathematics 101", grade: "A", roll: "1016" },
+  { name: "Hina Shafiq", class: "Mathematics 101", grade: "B", roll: "1017" },
+  { name: "Ali Rehman", class: "Mathematics 101", grade: "A-", roll: "1018" },
+  { name: "Fatima Noor", class: "Mathematics 101", grade: "B+", roll: "1019" },
 
-    // --- Physics Advanced ---
-    { name: "Sameer Javed", class: "Physics Advanced", grade: "A", roll: "01" },
-    { name: "Ayesha Tariq", class: "Physics Advanced", grade: "B+", roll: "02" },
-    { name: "Irfan Malik", class: "Physics Advanced", grade: "A-", roll: "03" },
-    { name: "Sara Qureshi", class: "Physics Advanced", grade: "B", roll: "04" },
-    { name: "Zain Abbas", class: "Physics Advanced", grade: "A+", roll: "05" },
-    { name: "Nida Khan", class: "Physics Advanced", grade: "B", roll: "06" },
-    { name: "Rehan Akhtar", class: "Physics Advanced", grade: "A", roll: "07" },
-    { name: "Amna Saeed", class: "Physics Advanced", grade: "B+", roll: "08" },
-    { name: "Tariq Hashmi", class: "Physics Advanced", grade: "A-", roll: "09" },
-    { name: "Sofia Iqbal", class: "Physics Advanced", grade: "B", roll: "10" },
+  // --- Physics Advanced ---
+  { name: "Sameer Javed", class: "Physics Advanced", grade: "A+", roll: "1020" },
+  { name: "Ayesha Tariq", class: "Physics Advanced", grade: "B", roll: "1021" },
+  { name: "Irfan Malik", class: "Physics Advanced", grade: "A", roll: "1022" },
+  { name: "Sara Qureshi", class: "Physics Advanced", grade: "B+", roll: "1023" },
+  { name: "Zain Abbas", class: "Physics Advanced", grade: "A-", roll: "1024" },
+  { name: "Nida Khan", class: "Physics Advanced", grade: "B", roll: "1025" },
+  { name: "Rehan Akhtar", class: "Physics Advanced", grade: "A+", roll: "1026" },
+  { name: "Amna Saeed", class: "Physics Advanced", grade: "B+", roll: "1027" },
+  { name: "Tariq Hashmi", class: "Physics Advanced", grade: "A", roll: "1028" },
+  { name: "Sofia Iqbal", class: "Physics Advanced", grade: "B", roll: "1029" },
 
-    // --- Chemistry Fundamentals ---
-    { name: "Hassan Bilal", class: "Chemistry Fundamentals", grade: "A", roll: "01" },
-    { name: "Mariam Shah", class: "Chemistry Fundamentals", grade: "B+", roll: "02" },
-    { name: "Fahad Jamil", class: "Chemistry Fundamentals", grade: "A-", roll: "03" },
-    { name: "Noor Fatima", class: "Chemistry Fundamentals", grade: "B", roll: "04" },
-    { name: "Shahroz Khan", class: "Chemistry Fundamentals", grade: "A+", roll: "05" },
-    { name: "Amina Rauf", class: "Chemistry Fundamentals", grade: "B", roll: "06" },
-    { name: "Adil Qamar", class: "Chemistry Fundamentals", grade: "A", roll: "07" },
-    { name: "Hira Malik", class: "Chemistry Fundamentals", grade: "B+", roll: "08" },
-    { name: "Usman Farooq", class: "Chemistry Fundamentals", grade: "A-", roll: "09" },
-    { name: "Sadia Khan", class: "Chemistry Fundamentals", grade: "B", roll: "10" },
+  // --- Chemistry Fundamentals ---
+  { name: "Hassan Bilal", class: "Chemistry Fundamentals", grade: "A", roll: "1030" },
+  { name: "Mariam Shah", class: "Chemistry Fundamentals", grade: "B+", roll: "1031" },
+  { name: "Fahad Jamil", class: "Chemistry Fundamentals", grade: "A-", roll: "1032" },
+  { name: "Noor Fatima", class: "Chemistry Fundamentals", grade: "B", roll: "1033" },
+  { name: "Shahroz Khan", class: "Chemistry Fundamentals", grade: "A+", roll: "1034" },
+  { name: "Amina Rauf", class: "Chemistry Fundamentals", grade: "B+", roll: "1035" },
+  { name: "Adil Qamar", class: "Chemistry Fundamentals", grade: "A", roll: "1036" },
+  { name: "Hira Malik", class: "Chemistry Fundamentals", grade: "B-", roll: "1037" },
+  { name: "Usman Farooq", class: "Chemistry Fundamentals", grade: "A-", roll: "1038" },
+  { name: "Sadia Khan", class: "Chemistry Fundamentals", grade: "B+", roll: "1039" },
 
-    // --- Biology Lab ---
-    { name: "Bilal Ahmed", class: "Biology Lab", grade: "A", roll: "01" },
-    { name: "Zoya Ali", class: "Biology Lab", grade: "B+", roll: "02" },
-    { name: "Ahsan Tariq", class: "Biology Lab", grade: "A-", roll: "03" },
-    { name: "Inaya Shah", class: "Biology Lab", grade: "B", roll: "04" },
-    { name: "Rahat Khan", class: "Biology Lab", grade: "A+", roll: "05" },
-    { name: "Samina Riaz", class: "Biology Lab", grade: "B", roll: "06" },
-    { name: "Imran Saeed", class: "Biology Lab", grade: "A", roll: "07" },
-    { name: "Maha Qureshi", class: "Biology Lab", grade: "B+", roll: "08" },
-    { name: "Farhan Malik", class: "Biology Lab", grade: "A-", roll: "09" },
-    { name: "Anum Tariq", class: "Biology Lab", grade: "B", roll: "10" },
+  // --- Biology Lab ---
+  { name: "Bilal Ahmed", class: "Biology Lab", grade: "A-", roll: "1040" },
+  { name: "Zoya Ali", class: "Biology Lab", grade: "B+", roll: "1041" },
+  { name: "Ahsan Tariq", class: "Biology Lab", grade: "A", roll: "1042" },
+  { name: "Inaya Shah", class: "Biology Lab", grade: "B", roll: "1043" },
+  { name: "Rahat Khan", class: "Biology Lab", grade: "A+", roll: "1044" },
+  { name: "Samina Riaz", class: "Biology Lab", grade: "B-", roll: "1045" },
+  { name: "Imran Saeed", class: "Biology Lab", grade: "A", roll: "1046" },
+  { name: "Maha Qureshi", class: "Biology Lab", grade: "B+", roll: "1047" },
+  { name: "Farhan Malik", class: "Biology Lab", grade: "A-", roll: "1048" },
+  { name: "Anum Tariq", class: "Biology Lab", grade: "B", roll: "1049" },
 ];
-
-
+    
 
 
 // Role-based Sidebar Navigation

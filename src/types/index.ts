@@ -85,5 +85,6 @@ export type SubjectStudent = {
     id: number;
     rollNo: string;
     name: string;
-    marks: number;
+    grade: string;
+    performance: number; // will remove later and will be calculated manually
 };

@@ -94,7 +94,7 @@ const Layout = ({ role }: LayoutProps) => {
 
             {/* Overlay */}
             <div
-                className={`fixed inset-0 bg-black bg-opacity-50 z-20 lg:hidden transition-opacity ${sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                className={`fixed inset-0 bg-black/50 z-20 lg:hidden transition-opacity ${sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
                     }`}
                 onClick={() => setSidebarOpen(false)}
             ></div>

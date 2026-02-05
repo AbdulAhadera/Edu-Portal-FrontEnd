@@ -1,6 +1,6 @@
 import BaseHeader from "../../components/BaseHeader";
 import { BookOpen, Users, TrendingUp } from "lucide-react";
-import { teacherClasses } from "../../data/mockData";
+import { teacherClass } from "../../data/mockData";
 import Button from "../../components/Button";
 
 const TeacherClasses: React.FC = () => {
@@ -13,7 +13,7 @@ const TeacherClasses: React.FC = () => {
 
             {/* Classes Grid */}
             <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {teacherClasses.map((cls) => {
+                {teacherClass.map((cls) => {
                     const performance = Math.floor(Math.random() * 15) + 75;
 
                     return (
