@@ -1,22 +1,35 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout.tsx";
 
-
-import { TeacherDashboard, TeacherClasses, TeacherAssignment, TeacherGrades, TeacherNotifications, TeacherResources, TeacherAttendance, TeacherAccount } from "./pages/index.ts";
-
-
 import {
-  StudentCourse, StudentDashboard, StudentAssignment, StudentGrade, StudentAttendance, StudentResource, StudentFeedback, StudentNotifications, StudentHomework, StudentAccount, StudentProfile,
-
+  TeacherDashboard,
+  TeacherClasses,
+  TeacherAssignment,
+  TeacherGrades,
+  TeacherNotifications,
+  TeacherResources,
+  TeacherAttendance,
+  TeacherAccount,
+  LoadingState,
 } from "./pages/index.ts";
 
-
+import {
+  StudentCourse,
+  StudentDashboard,
+  StudentAssignment,
+  StudentGrade,
+  StudentAttendance,
+  StudentResource,
+  StudentFeedback,
+  StudentNotifications,
+  StudentHomework,
+  StudentAccount,
+  StudentProfile,
+} from "./pages/index.ts";
 
 const Router: React.FC = () => {
   return (
-
     <Routes>
-
       {/* Student Routes */}
       <Route path="/student" element={<Layout role="student" />}>
         <Route path="" element={<StudentDashboard />} />
@@ -33,7 +46,7 @@ const Router: React.FC = () => {
       </Route>
 
       {/* Teacher Routes */}
-      <Route path="/teacher" element={<Layout role="teacher" />} >
+      <Route path="/teacher" element={<Layout role="teacher" />}>
         <Route path="" element={<TeacherDashboard />} />
         <Route path="classes" element={<TeacherClasses />} />
         <Route path="assignments" element={<TeacherAssignment />} />
@@ -42,13 +55,12 @@ const Router: React.FC = () => {
         <Route path="resources" element={<TeacherResources />} />
         <Route path="attendance" element={<TeacherAttendance />} />
         <Route path="accounts" element={<TeacherAccount />} />
+        <Route path="loading" element={<LoadingState />} />
       </Route>
 
       <Route path="/admin" element={<Layout role="admin" />} />
-
     </Routes>
   );
 };
 
 export default Router;
-
