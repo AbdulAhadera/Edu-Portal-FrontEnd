@@ -69,6 +69,9 @@ const TeacherResources: React.FC = () => {
             </div>
 
             <div className="flex gap-3">
+
+            {/* Make a More Reusebale Button */}
+              
               <button className="flex-1 flex items-center justify-center gap-2 bg-primary text-white text-sm font-medium py-2.5 rounded-sm hover:opacity-90 transition-opacity cursor-pointer">
                 <Eye className="w-4 h-4" />
                 View

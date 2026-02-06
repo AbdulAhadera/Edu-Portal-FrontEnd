@@ -97,6 +97,8 @@ const TeacherGrades: React.FC = () => {
     [selectedClass],
   );
 
+  
+
   return (
     <div>
       <BaseHeader heading="Gradebook" text="View and manage student grades" />

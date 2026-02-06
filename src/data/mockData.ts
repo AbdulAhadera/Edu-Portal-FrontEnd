@@ -856,6 +856,34 @@ export const teacherAssignments = [
   },
 ];
 
+export const teacherHomework = [
+  {
+    id: 1,
+    title: "Calculus Problem Set 3",
+    class: "Mathematics 101",
+    dueDate: "2026-01-28",
+    // In bacho ne kar liya hai (Done)
+    completedStudents: ["Ayaan Khan", "Zara Ahmed", "Danish Riaz", "Maria Aslam"],
+    totalStudents: 10, 
+  },
+  {
+    id: 2,
+    title: "Newton Laws Essay",
+    class: "Physics Advanced",
+    dueDate: "2026-01-30",
+    completedStudents: ["Sameer Javed", "Rehan Akhtar", "Sofia Iqbal"],
+    totalStudents: 10,
+  },
+  {
+    id: 11,
+    title: "Biology Lab: Microscopy",
+    class: "Biology Lab",
+    dueDate: "2026-02-10",
+    completedStudents: ["Bilal Ahmed", "Ahsan Tariq", "Rahat Khan", "Maha Qureshi"],
+    totalStudents: 10,
+  }
+];
+
 export const studentsData = [
   // --- Mathematics 101 ---
   {
@@ -1557,6 +1585,8 @@ export const roleSideBarItems: Record<UserRole, LayoutItem[]> = {
     // { id: "quizzes", label: "Quizzes", icon: ClipboardList },
     { id: "grades", label: "Grades", icon: GraduationCap },
     { id: "attendance", label: "Attendance", icon: CheckSquare },
+    { id: "homework", label: "homework", icon: ClipboardCheck },
+
     // { id: 'discussions', label: 'Discussions', icon: MessageSquare },
     // { id: "accounts", label: "Accounts", icon: FileUserIcon },
     // { id: 'calendar', label: 'Calendar', icon: Calendar },

@@ -124,11 +124,10 @@ const TeacherAttendance: React.FC = () => {
   ];
 
   // ------------------- Filter students by selected class -------------------
-  // ------------------- Filter students by selected class -------------------
-  const filteredStudents = useMemo(
-    () => filterStudentsByClass(attendanceData, selectedClass),
-    [attendanceData, selectedClass],
-  );  
+ const filteredStudents = attendanceData.filter(
+  (s) => s.class === selectedClass
+);
+
 
   // ------------------- Render -------------------
   return (

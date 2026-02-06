@@ -9,8 +9,9 @@ import {
   TeacherNotifications,
   TeacherResources,
   TeacherAttendance,
-  TeacherAccount,
+  TeacherHomework,
   LoadingState,
+  TeacherProfile
 } from "./pages/index.ts";
 
 import {
@@ -54,7 +55,8 @@ const Router: React.FC = () => {
         <Route path="notifications" element={<TeacherNotifications />} />
         <Route path="resources" element={<TeacherResources />} />
         <Route path="attendance" element={<TeacherAttendance />} />
-        <Route path="accounts" element={<TeacherAccount />} />
+        <Route path="homework" element={<TeacherHomework />} />
+        <Route path="profile" element={<TeacherProfile />} />
         <Route path="loading" element={<LoadingState />} />
       </Route>
 

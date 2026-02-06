@@ -19,7 +19,8 @@ import TeacherGrades from "./teacherPages/TeacherGrades";
 import TeacherNotifications from "./teacherPages/TeacherNotifications";
 import TeacherResources from "./teacherPages/TeacherResources";
 import TeacherAttendance from "./teacherPages/TeacherAttendance";
-import TeacherAccount from "./teacherPages/TeacherAccount";
+import TeacherHomework from "./teacherPages/TeacherHomework";
+import TeacherProfile from "./teacherPages/TeacherProfile";
 
 // Teacher Export
 export {
@@ -30,7 +31,8 @@ export {
   TeacherNotifications,
   TeacherResources,
   TeacherAttendance,
-  TeacherAccount,
+  TeacherHomework,
+  TeacherProfile
 };
 
 // Student Export
