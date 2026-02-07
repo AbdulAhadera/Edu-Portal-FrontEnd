@@ -1,7 +1,7 @@
 import BaseHeader from "../../components/BaseHeader";
 import { BookOpen, Users, TrendingUp } from "lucide-react";
 import { teacherClass } from "../../data/mockData";
-import Button from "../../components/Button";
+import Button from "../../components/baseComponents/Button";
 
 const TeacherClasses: React.FC = () => {
     return (

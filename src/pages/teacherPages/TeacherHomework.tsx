@@ -5,7 +5,7 @@ import {
   teacherClass,
   studentsData,
 } from "../../data/mockData";
-import Button from "../../components/Button";
+import Button from "../../components/baseComponents/Button";
 import DataTable from "../../components/DataTable";
 import { CheckCircle2, CircleDashed } from "lucide-react";
 
@@ -117,7 +117,7 @@ const TeacherHomework: React.FC = () => {
       <div>
         <div className="flex flex-wrap gap-2">
           {classHomeworks.map((hw) => (
-            <button
+            <Button
               key={hw.id}
               onClick={() => setSelectedHwId(hw.id)}
               className={`px-4 py-2 rounded-sm border text-left transition-all 
@@ -126,16 +126,19 @@ const TeacherHomework: React.FC = () => {
                     ? "border-primary bg-primary/5 ring-1 ring-primary"
                     : "border-ui-border bg-card hover:border-text-muted"
                 }`}
-            >
-              <p
-                className={`text-sm font-semibold ${selectedHwId === hw.id ? "text-primary" : "text-text-main"}`}
-              >
-                {hw.title}
-              </p>
-              <p className="text-[10px] text-text-muted mt-1 font-medium italic">
-                Due: {hw.dueDate}
-              </p>
-            </button>
+              text={
+                <span>
+                  <p
+                    className={`text-sm font-semibold ${selectedHwId === hw.id ? "text-primary" : "text-text-main"}`}
+                  >
+                    {hw.title}
+                  </p>
+                  <p className="text-[10px] text-text-muted mt-1 font-medium italic">
+                    Due: {hw.dueDate}
+                  </p>
+                </span>
+              }
+            />
           ))}
         </div>
       </div>

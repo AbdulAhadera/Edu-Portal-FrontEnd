@@ -1,7 +1,7 @@
 import React from "react";
 import { FileText, Clock, CheckCircle, AlertCircle, XCircle, Upload } from "lucide-react";
 import { teacherAssignments } from "../../src/data/mockData";
-import Button from "./Button";
+import Button from "./baseComponents/Button";
 
 const TeacherAssignmentsCard: React.FC = () => {
     return (

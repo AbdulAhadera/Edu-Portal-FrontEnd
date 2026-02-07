@@ -11,9 +11,12 @@ const StudentHomework: React.FC = () => {
   // Determine status for column
   const getStatus = (h: Homework) => (h.status === "completed" ? "done" : "todo");
 
+
   // Check if homework is overdue
   const isOverdue = (h: Homework) =>
     getStatus(h) === "todo" && new Date(h.dueDate) < new Date();
+
+
 
   // Handle drop between columns
   const handleDrop = (targetColumn: "todo" | "done") => {
@@ -28,8 +31,11 @@ const StudentHomework: React.FC = () => {
     setDraggedId(null);
   };
 
+
   const todoItems = items.filter(i => getStatus(i) === "todo");
   const doneItems = items.filter(i => getStatus(i) === "done");
+
+
 
   return (
     <div>

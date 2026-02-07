@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, GraduationCap, Clock, Award, ShieldCheck, Activity } from 'lucide-react';
-import Button from '../../components/Button.tsx';
+import Button from '../../components/baseComponents/Button.tsx';
 
 const TeacherProfile = () => {
   const teacher = {

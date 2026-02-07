@@ -1,5 +1,5 @@
 import React from "react";
-import type { DropdownProps } from "../../src/types/index.ts";
+import type { DropdownProps } from "../types/index.ts";
 
 const Dropdown: React.FC<DropdownProps> = ({ options, value, onChange, placeholder = "Select...", className }) => {
     return (

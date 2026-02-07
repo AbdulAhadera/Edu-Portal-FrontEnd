@@ -3,7 +3,7 @@ import { useState, useMemo } from "react";
 import BaseHeader from "../../components/BaseHeader";
 import { teacherClass, studentsData } from "../../data/mockData";
 import DataTable from "../../components/DataTable";
-import Button from "../../components/Button";
+import Button from "../../components/baseComponents/Button";
 import type { SubjectStudent } from "../../types";
 import { TrendingUp, TrendingDown, Minus } from "lucide-react";
 

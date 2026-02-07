@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import type React from "react";
 import BaseHeader from "../../components/BaseHeader";
-import Button from "../../components/Button";
+import Button from "../../components/baseComponents/Button";
 import DataTable from "../../components/DataTable";
 import { teacherClass, studentAttendance } from "../../data/mockData";
 import type {
@@ -124,10 +124,9 @@ const TeacherAttendance: React.FC = () => {
   ];
 
   // ------------------- Filter students by selected class -------------------
- const filteredStudents = attendanceData.filter(
-  (s) => s.class === selectedClass
-);
-
+  const filteredStudents = attendanceData.filter(
+    (s) => s.class === selectedClass,
+  );
 
   // ------------------- Render -------------------
   return (
@@ -136,7 +135,6 @@ const TeacherAttendance: React.FC = () => {
         heading="Attendance"
         text="Track and manage student attendance"
       />
-
       {/* Class Selection Buttons */}
       <div className="mb-6 overflow-x-auto hide-scrollbar">
         <div className="flex gap-3 min-w-max pb-2">

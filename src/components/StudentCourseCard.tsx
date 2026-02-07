@@ -1,4 +1,4 @@
-import Button from "../components/Button.tsx";
+import Button from "./baseComponents/Button.tsx";
 import RangeBar from "../components/RangeBar.tsx";
 import { courses } from "../../src/data/mockData.ts";
 import { useState } from "react";

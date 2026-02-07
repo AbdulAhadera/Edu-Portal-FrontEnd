@@ -66,23 +66,14 @@
   /* Slate-400: Muted but clear */
 }
 
-/* --- GLOBAL STYLES FOR THE "SEXY" FEEL --- */
+
+
+
+/* --- GLOBAL STYLES FOR THE "GOOD" FEEL --- */
 
 /* 1. Smooth transitions for theme switching */
 * {
   transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-/* 2. Interactive Cards */
-.card {
-  border-radius: 12px;
-  border: 1px solid var(--ui-border);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
 }
 
 .dark .card:hover {

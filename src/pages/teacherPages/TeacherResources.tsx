@@ -1,7 +1,7 @@
 import type React from "react";
 import { useState } from "react";
 import BaseHeader from "../../components/BaseHeader";
-import Button from "../../components/Button";
+import Button from "../../components/baseComponents/Button";
 import { teacherClass, teacherResources } from "../../data/mockData";
 import { FileText, Eye, Download, Calendar } from "lucide-react";
 
@@ -69,17 +69,18 @@ const TeacherResources: React.FC = () => {
             </div>
 
             <div className="flex gap-3">
+              {/* Make a More Reusebale Button */}
 
-            {/* Make a More Reusebale Button */}
-              
-              <button className="flex-1 flex items-center justify-center gap-2 bg-primary text-white text-sm font-medium py-2.5 rounded-sm hover:opacity-90 transition-opacity cursor-pointer">
-                <Eye className="w-4 h-4" />
-                View
-              </button>
-              <button className="flex-1 flex items-center justify-center gap-2 border border-ui-border text-text-main text-sm font-medium py-2.5 rounded-sm hover:bg-ui-hover transition-colors cursor-pointer">
-                <Download className="w-4 h-4" />
-                Docs
-              </button>
+              <Button
+                className="flex-1 flex items-center justify-center gap-2 bg-primary text-white text-sm font-medium py-2.5 rounded-sm hover:opacity-90 transition-opacity cursor-pointer"
+                startIcon={<Eye className="w-4 h-4" />}
+                text="View"
+              />
+              <Button
+                className="flex-1 flex items-center justify-center gap-2 border border-ui-border text-text-main text-sm font-medium py-2.5 rounded-sm hover:bg-ui-hover transition-colors cursor-pointer"
+                startIcon={<Download className="w-4 h-4" />}
+                text="Docs"
+              />
             </div>
           </div>
         ))}
