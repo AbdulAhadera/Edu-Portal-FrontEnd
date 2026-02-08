@@ -10,6 +10,7 @@ import type {
   SubjectStudent,
   TStudentAttendance,
 } from "../../types";
+import BaseInput from "../../components/baseComponents/BaseInput";
 
 // ------------------- Component -------------------
 const TeacherAttendance: React.FC = () => {
@@ -158,10 +159,10 @@ const TeacherAttendance: React.FC = () => {
         <div className="w-full flex justify-between px-2 pb-2">
           <Button
             text="Save Attendance"
-            className="px-8 py-2 bg-primary text-white"
+            className="px-4 py-2 bg-primary rounded-sm font-medium text-white"
             onClick={handleSaveAttendance}
           />
-          <input
+          <BaseInput
             type="date"
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}

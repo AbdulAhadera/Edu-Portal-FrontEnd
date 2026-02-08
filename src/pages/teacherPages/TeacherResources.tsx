@@ -21,7 +21,7 @@ const TeacherResources: React.FC = () => {
           heading="Resources"
           text="Manage lecture materials and study resources Upload Resource"
         />
-        <Button text="Upload Resource" className="bg-primary my-6 px-4" />
+        <Button text="Upload Resource" className="bg-primary my-6 px-4 text-button rounded-sm" />
       </div>
 
       <div className="mb-6 overflow-x-auto hide-scrollbar">

@@ -1,10 +1,10 @@
 import { useState, useMemo } from "react";
 import DataTable from "../../components/DataTable.tsx";
 import { courses, studentAssignments } from "../../data/mockData";
-import Input from "../../components/Input.tsx";
 import type { AssignmentData } from "../../types/index.ts";
 import BaseHeader from "../../components/BaseHeader.tsx";
 import Button from "../../components/baseComponents/Button.tsx";
+import FileUploadInput from "../../components/baseComponents/FileUploadInput.tsx";
 
 // defining columns here.
 
@@ -61,7 +61,7 @@ const assignmentColumns = [
             href={row.addedSubmission}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary text-sm font-medium hover:underline"
+            className="text-primary text-sm font-medium underline"
           >
             Download Submission
           </a>
@@ -70,20 +70,11 @@ const assignmentColumns = [
 
       // 2: Not submitted? Show file upload input
       return (
-        <label className="cursor-pointer rounded-full text-sm font-medium">
-          Upload
-          <Input
-            type="file"
-            className="hidden" // keeps the actual input invisible
-            onChange={(e) => {
-              const file = e.target.files?.[0];
-              if (file) {
-                handleUpload(row.id, file); // your upload handler
-              }
-            }}
-          />
-        </label>
-      );
+        <Button 
+          text="Upload File"
+          className="font-medium text-text-main hover:underline"
+        />
+      )
     },
   },
 
@@ -102,7 +93,7 @@ const assignmentColumns = [
         href={row.assignmentSolution}
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-blue-500 text-card px-2 py-1 rounded-none text-xs font-medium hover:bg-blue-600 transition"
+        className="bg-blue-500 text-card px-2 py-1 rounded-xs text-xs font-medium hover:bg-blue-600 transition"
       >
         View Solution
       </a>

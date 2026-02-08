@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 export interface ButtonProps {
-  text?: string; // agar sirf icon bhi use karna ho
+  text?: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
   className?: string;
@@ -9,4 +9,19 @@ export interface ButtonProps {
   loading?: boolean;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
+}
+
+export interface BaseInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  label?: string;
+  error?: string;
+  wrapperClassName?: string;
+}
+
+
+export interface FileUploadInputProps {
+  label?: string;
+  error?: string;
+  onChange?: (file: File | null) => void; // either file either null
+  containerClassName?: string;
+  dropzoneClassName?: string;
 }

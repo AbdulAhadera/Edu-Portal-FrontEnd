@@ -93,7 +93,7 @@ const TeacherHomework: React.FC = () => {
           heading="Homework Control"
           text="Review submissions and manage student accountability"
         />
-        <Button text="Give homework" className="bg-primary my-6 px-4" />
+        <Button text="Give homework" className="bg-primary my-6 px-4 text-button rounded-sm" />
       </div>
 
       {/* 1. Class Selection (Your Standard) */}
