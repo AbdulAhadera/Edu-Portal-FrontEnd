@@ -5,7 +5,7 @@ import DataTable from '../../components/DataTable';
 import BaseHeader from '../../components/BaseHeader';
 
 const StudentAccount: React.FC = () => {
-
+    
     // 1: Passing Columns
     const FeeColumns: Column<typeof feesData.monthlyPaymentHistory[0]>[] = [
         { header: "Month", key: "month" },

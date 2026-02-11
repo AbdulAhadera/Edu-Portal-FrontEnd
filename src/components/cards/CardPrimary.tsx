@@ -12,7 +12,7 @@ interface CardPrimaryProps {
 
 const CardPrimary = ({ data }: CardPrimaryProps) => {
   const Icon = data.icon;
-
+  
   return (
     <div className="bg-card rounded-sm p-4 shadow-sm border border-ui-border transition-colors">
       <div className="flex items-center justify-between">

@@ -19,6 +19,8 @@ import {
   AlertTriangle,
   Info,
   CalendarDays,
+  AlertCircle,
+  XCircle,
 } from "lucide-react";
 
 import type {
@@ -32,6 +34,7 @@ import type {
   TStudentAttendance,
   AttendanceRecord,
 } from "../types/index.ts";
+import type { Announcement } from "../hooks/useAnnouncements.ts";
 
 // --- Student Data Constants ---
 
@@ -709,46 +712,33 @@ export const studentDashboardStats: DashboardCard[] = [
   },
 ];
 
-export const announcementsData = [
+export const announcementsData: Announcement[] = [
   {
-    id: "1",
-    title: "Fee deadline extended",
-    message: "January fees ab 30 Jan 2026 tak submit ki ja sakti hain.",
-    icon: Megaphone,
-    type: "warning",
-    isNew: true,
-    color: "text-yellow-600",
-    bgColor: "bg-yellow-50 dark:bg-yellow-500/10",
+    id: 1,
+    title: "New Fee Update",
+    message: "Your fee is due",
+    date: new Date(),
+    read: false,
+    category: "info",
+    icon: Info, // Info icon for "info"
   },
   {
-    id: "2",
-    title: "Mid-term schedule released",
-    message: "Mid-term exams ka schedule portal par upload kar diya gaya hai.",
-    icon: CalendarDays,
-    type: "info",
-    isNew: true,
-    color: "text-blue-600",
-    bgColor: "bg-blue-50 dark:bg-blue-500/10",
+    id: 2,
+    title: "Holiday Notice",
+    message: "School closed on Monday",
+    date: new Date("2026-02-10"),
+    read: true,
+    category: "warning",
+    icon: AlertCircle, // Warning icon
   },
   {
-    id: "3",
-    title: "Library timing update",
-    message: "Library ab weekdays mein 8:00 AM se 8:00 PM tak open rahegi.",
-    icon: Info,
-    type: "info",
-    isNew: false,
-    color: "text-blue-600",
-    bgColor: "bg-blue-50 dark:bg-blue-500/10",
-  },
-  {
-    id: "4",
-    title: "System maintenance notice",
-    message: "Portal 14 Jan ko 12:00 AM se 3:00 AM tak unavailable rahega.",
-    icon: AlertTriangle,
-    type: "danger",
-    isNew: false,
-    color: "text-red-600",
-    bgColor: "bg-red-50 dark:bg-red-500/10",
+    id: 3,
+    title: "Payment Failed",
+    message: "Your last payment failed",
+    date: new Date("2026-02-09"),
+    read: false,
+    category: "warning",
+    icon: XCircle, // Danger icon
   },
 ];
 

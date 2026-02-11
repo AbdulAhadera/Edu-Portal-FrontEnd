@@ -1,6 +1,6 @@
 import BaseHeader from "../../components/BaseHeader"
 import Button from "../../components/baseComponents/Button";
-import CardPrimary from "../../components/CardPrimary";
+import CardPrimary from "../../components/cards/CardPrimary";
 import { teacherDashboardStats } from "../../data/mockData";
 import { announcementsData } from "../../data/mockData";
 
