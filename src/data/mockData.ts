@@ -21,6 +21,8 @@ import {
   CalendarDays,
   AlertCircle,
   XCircle,
+  CheckCircle,
+  TriangleAlert,
 } from "lucide-react";
 
 import type {
@@ -716,30 +718,30 @@ export const announcementsData: Announcement[] = [
   {
     id: 1,
     title: "New Fee Update",
-    message: "Your fee is due",
+    message: "Your monthly school fee is due. Please make sure to submit the payment before the due date to avoid any late charges or penalties.",
     date: new Date(),
     read: false,
     category: "info",
-    icon: Info, // Info icon for "info"
+    icon: Info,
   },
   {
     id: 2,
-    title: "Holiday Notice",
-    message: "School closed on Monday",
+    title: "School Closed Notice",
+    message: "Please be informed that the school will remain closed on Monday due to a public holiday. Regular classes will resume from Tuesday as per schedule.",
     date: new Date("2026-02-10"),
     read: true,
     category: "warning",
-    icon: AlertCircle, // Warning icon
+    icon: TriangleAlert,
   },
   {
     id: 3,
-    title: "Payment Failed",
-    message: "Your last payment failed",
+    title: "Payment Successful",
+    message: "Your recent fee payment has been successfully processed. Thank you for completing the transaction on time.",
     date: new Date("2026-02-09"),
     read: false,
-    category: "warning",
-    icon: XCircle, // Danger icon
-  },
+    category: "success",
+    icon: CheckCircle,
+  }
 ];
 
 // --- Teacher Data Constant ---

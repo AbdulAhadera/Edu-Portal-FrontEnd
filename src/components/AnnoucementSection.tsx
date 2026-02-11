@@ -6,11 +6,9 @@ const AnnoucementSection: React.FC = () => {
   const { data: announcements, loading, error } = useAnnouncements();
 
   const categoryMap = {
-    info: { bg: "bg-blue-50", text: "text-blue-600" },
-    warning: { bg: "bg-yellow-50", text: "text-yellow-600" },
-    danger: { bg: "bg-red-50", text: "text-red-600" },
+    info: { bg: "bg-yellow-50", text: "text-yellow-600" },
+    warning: { bg: "bg-red-50", text: "text-red-600" },
     success: { bg: "bg-green-50", text: "text-green-600" },
-    alert: { bg: "bg-red-50", text: "text-red-600" },
   };
 
   if (loading)
@@ -41,20 +39,20 @@ const AnnoucementSection: React.FC = () => {
     );
 
   return (
-    <div className="bg-card p-3 rounded-sm border border-ui-border shadow-sm w-full md:w-2/3">
-      <h3 className="text-xl font-semibold text-text-main mb-3">
+    <div className="bg-card py-3 px-1 rounded-sm border border-ui-border shadow-sm w-full md:w-2/3">
+      <h3 className="text-xl px-2 font-semibold text-text-main mb-3">
         Announcements
       </h3>
 
-      <div className="space-y-2">
-        {announcements.map((data) => {
+      <div className="space-y-1">
+        {announcements.map((data: Announcement) => {
           const colors = categoryMap[data.category || "info"];
           const Icon = data.icon; // optional, can render default if needed
 
           return (
             <div
               key={data.id}
-              className="flex items-start gap-3 p-2 rounded-sm hover:bg-ui-hover"
+              className="flex items-start gap-3 p-1 py-2 rounded-sm hover:bg-ui-hover"
             >
               {Icon && (
                 <div
