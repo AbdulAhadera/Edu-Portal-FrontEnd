@@ -1,9 +1,7 @@
 import AnnoucementSection from "../../components/AnnoucementSection";
 import BaseHeader from "../../components/BaseHeader";
-import Button from "../../components/baseComponents/Button";
 import CardPrimary from "../../components/cards/CardPrimary";
 import { teacherDashboardStats } from "../../data/mockData";
-import { announcementsData } from "../../data/mockData";
 
 const TeacherDashboard: React.FC = () => {
   return (
@@ -21,7 +19,6 @@ const TeacherDashboard: React.FC = () => {
 
       <div className="flex flex-col md:flex-row gap-3">
         <AnnoucementSection />
-        
       </div>
     </div>
   );

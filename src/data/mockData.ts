@@ -15,12 +15,7 @@ import {
   ClipboardCheck,
   BookCopy,
   FileUserIcon,
-  Megaphone,
-  AlertTriangle,
   Info,
-  CalendarDays,
-  AlertCircle,
-  XCircle,
   CheckCircle,
   TriangleAlert,
 } from "lucide-react";

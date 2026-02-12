@@ -1,66 +1,58 @@
-import type React from "react";
-import type { Column, DataTableProps } from "../data/mockData";
+import type { DataTableProps } from "../components/baseComponents/BaseType";
 
-function DataTable<T extends { id: string }>({
-    rows,
-    columns,
+function DataTable<T>({
+  rows,
+  columns,
+  className = "px-2 py-2",
 }: DataTableProps<T>) {
-
-    if (!rows.length) {
-        return (
-            <div className="py-10 text-center text-text-muted">
-                No data available
-            </div>
-        );
-    }
-
-    // fallback: auto-generate columns from first row
-    const resolvedColumns: Column<T>[] =
-        columns ??
-        (Object.keys(rows[0]).map((key) => ({
-            header: key.replace(/([A-Z])/g, " $1"),
-            key: key as keyof T,
-        })) as Column<T>[]);
-
+  if (!rows.length) {
     return (
-        <div className="overflow-x-auto hide-scrollbar">
-            <table className="w-full border border-ui-border">
-                <thead className="bg-ui-hover">
-                    <tr> 
-                        {resolvedColumns.map((col) => (
-                            <th
-                                key={String(col.key)}
-                                className={`px-4 py-3  text-sm font-semibold text-text-muted
-                                    ${col.key === "assignmentSolution" ? "whitespace-nowrap text-center" : " text-left"}`}
-                            >
-                                {col.header}
-                            </th>
-                        ))}
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {rows.map((row, rowIndex) => (
-                        <tr key={rowIndex} className="hover:bg-ui-hover">
-                            {columns?.map((col, colIndex) => {
-                                const value = col.key ? row[col.key as keyof typeof row] : undefined;
-                                return (
-                                    <td
-                                        key={colIndex}
-                                        className={`px-4 py-3 text-sm text-text-main 
-                                        ${col.key === "assignmentSolution" ? " whitespace-nowrap" : ""}`} // ✅ same width here
-                                    >
-                                        {col.render ? col.render(value, row) : (value as React.ReactNode)}
-                                    </td>
-                                );
-                            })}
-                        </tr>
-                    ))}
-                </tbody>
-
-            </table>
-        </div>
+      <div className="py-10 text-center text-text-muted">No data available</div>
     );
+  }
+
+  const resolvedColumns =
+    columns ??
+    (Object.keys(rows[0]).map((key) => ({
+      key: key as keyof T,
+      header: key.toString(),
+    })) as any);
+
+  return (
+    <div className="overflow-x-auto hide-scrollbar">
+      <table className="w-full border border-ui-border">
+        <thead className="bg-ui-hover">
+          <tr>
+            {resolvedColumns.map((col) => (
+              <th
+                key={String(col.key)}
+                className={`${className} text-sm font-semibold text-text-muted`}
+              >
+               {col.header}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, rowIndex) => (
+            <tr key={rowIndex} className="hover:bg-ui-hover">
+              {resolvedColumns.map((col, colIndex) => {
+                const value = row[col.key];
+                return (
+                  <td
+                    key={colIndex}
+                    className={`${className} text-sm text-text-main ` }
+                  >
+                    {col.render ? col.render(value, row) : value}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
 export default DataTable;

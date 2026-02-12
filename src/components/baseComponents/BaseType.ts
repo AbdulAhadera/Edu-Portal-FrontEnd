@@ -17,11 +17,24 @@ export interface BaseInputProps extends React.InputHTMLAttributes<HTMLInputEleme
   wrapperClassName?: string;
 }
 
-
 export interface FileUploadInputProps {
   label?: string;
   error?: string;
   onChange?: (file: File | null) => void; // either file either null
   containerClassName?: string;
   dropzoneClassName?: string;
+}
+
+
+export interface Column<T, K extends keyof T = keyof T> {
+  key: K;
+  header: string;
+  render?: (value: T[K], row: T) => React.ReactNode;
+  nowrap?: boolean;
+}
+
+export interface DataTableProps<T> {
+  rows: T[];
+  columns?: Column<T>[];
+  className: string;
 }

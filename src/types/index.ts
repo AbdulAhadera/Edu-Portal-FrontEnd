@@ -1,4 +1,3 @@
-import type { JSX } from "react";
 
 export type UserRole = "student" | "teacher" | "admin";
 
@@ -7,6 +6,8 @@ export type LayoutItem = {
   label: string;
   icon: React.ComponentType;
 };
+
+
 
 export type DashboardCard = {
   id: string;
@@ -28,6 +29,7 @@ export type CourseCardData = {
   courseMaterial?: object;
 };
 
+
 export type AssignmentData = {
   id: string;
   assignNo: number;
@@ -45,16 +47,7 @@ export type AssignmentData = {
 
 export type AttendanceStatus = "present" | "absent" | "late" | undefined;
 
-export type Column<T> = {
-  header: string | number;
-  key?: keyof T;
-  render?: (value: any, row: T) => JSX.Element;
-};
 
-export type DataTableProps<T> = {
-  rows: T[];
-  columns?: Column<T>[];
-};
 
 export type DropdownOption = {
   label: string;
