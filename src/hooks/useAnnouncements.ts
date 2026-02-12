@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { announcementsData } from "../data/mockData";
 import { useLoader } from "./helpers/useLoader";
 import type { LucideProps } from "lucide-react";
@@ -14,11 +15,13 @@ export interface Announcement {
 }
 
 export const useAnnouncements = () => {
-  const fetchAnnouncements = async (): Promise<Announcement[]> => {
-    return new Promise((resolve) => {
-      setTimeout(() => resolve(announcementsData), 300); // simulate API
-    });
-  };
 
-  return useLoader(fetchAnnouncements);
+  const fetchAnnouncements = useCallback(
+    async (): Promise<Announcement[]> => {
+      return announcementsData; // no need for drama delay
+    },
+    []
+  );
+
+  return useLoader(fetchAnnouncements, []);
 };

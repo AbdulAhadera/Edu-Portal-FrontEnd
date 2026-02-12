@@ -5,7 +5,7 @@ function DataTable<T>({
   columns,
   className = "px-2 py-2",
 }: DataTableProps<T>) {
-  if (!rows.length) {
+  if (!rows) {
     return (
       <div className="py-10 text-center text-text-muted">No data available</div>
     );
@@ -26,7 +26,7 @@ function DataTable<T>({
             {resolvedColumns.map((col) => (
               <th
                 key={String(col.key)}
-                className={`${className} text-sm font-semibold text-text-muted`}
+                className={`${className} text-left text-sm font-semibold text-text-muted`}
               >
                {col.header}
               </th>
@@ -41,7 +41,7 @@ function DataTable<T>({
                 return (
                   <td
                     key={colIndex}
-                    className={`${className} text-sm text-text-main ` }
+                    className={`${className} text-sm text-text-main` }
                   >
                     {col.render ? col.render(value, row) : value}
                   </td>

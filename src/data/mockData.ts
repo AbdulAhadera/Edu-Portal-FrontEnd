@@ -79,7 +79,7 @@ export const feesData = {
     amount: 5000,
     dueDate: "2024-01-31",
     status: "unpaid",
-    fine: 0,
+    fine: 2,
   },
   monthlyPaymentHistory: [
     {
@@ -620,58 +620,6 @@ export const courses: CourseCardData[] = [
       },
     ],
   },
-  {
-    id: 105,
-    title: "Social Studies",
-    description: "Learn about history, geography, and civic responsibilities.",
-    instructor: "Ms. Ayesha",
-    duration: "7 weeks",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
-    barColor: "bg-purple-500",
-    courseMaterial: [
-      {
-        addDate: "2026-01-02",
-        title: "History Overview",
-        url: "https://pdfobject.com/pdf/sample.pdf",
-      },
-      {
-        addDate: "2026-01-04",
-        title: "Geography Basics",
-        url: "https://pdfobject.com/pdf/sample.pdf",
-      },
-      {
-        addDate: "2026-01-06",
-        title: "Civic Responsibilities",
-        url: "https://pdfobject.com/pdf/sample.pdf",
-      },
-    ],
-  },
-  {
-    id: 106,
-    title: "Islamic Studies",
-    description: "Basic teachings, ethics, and history of Islam.",
-    instructor: "Mufti Hassan",
-    duration: "6 weeks",
-    image: "https://images.unsplash.com/photo-1609599006353-e629aaabfeae",
-    barColor: "bg-teal-500",
-    courseMaterial: [
-      {
-        addDate: "2026-01-01",
-        title: "Teachings of Islam",
-        url: "https://pdfobject.com/pdf/sample.pdf",
-      },
-      {
-        addDate: "2026-01-03",
-        title: "Islamic Ethics",
-        url: "https://pdfobject.com/pdf/sample.pdf",
-      },
-      {
-        addDate: "2026-01-05",
-        title: "History of Islam",
-        url: "https://pdfobject.com/pdf/sample.pdf",
-      },
-    ],
-  },
 ];
 
 export const studentDashboardStats: DashboardCard[] = [
@@ -713,7 +661,8 @@ export const announcementsData: Announcement[] = [
   {
     id: 1,
     title: "New Fee Update",
-    message: "Your monthly school fee is due. Please make sure to submit the payment before the due date to avoid any late charges or penalties.",
+    message:
+      "Your monthly school fee is due. Please make sure to submit the payment before the due date to avoid any late charges or penalties.",
     date: new Date(),
     read: false,
     category: "info",
@@ -722,7 +671,8 @@ export const announcementsData: Announcement[] = [
   {
     id: 2,
     title: "School Closed Notice",
-    message: "Please be informed that the school will remain closed on Monday due to a public holiday. Regular classes will resume from Tuesday as per schedule.",
+    message:
+      "Please be informed that the school will remain closed on Monday due to a public holiday. Regular classes will resume from Tuesday as per schedule.",
     date: new Date("2026-02-10"),
     read: true,
     category: "warning",
@@ -731,12 +681,13 @@ export const announcementsData: Announcement[] = [
   {
     id: 3,
     title: "Payment Successful",
-    message: "Your recent fee payment has been successfully processed. Thank you for completing the transaction on time.",
+    message:
+      "Your recent fee payment has been successfully processed. Thank you for completing the transaction on time.",
     date: new Date("2026-02-09"),
     read: false,
     category: "success",
     icon: CheckCircle,
-  }
+  },
 ];
 
 // --- Teacher Data Constant ---
@@ -850,8 +801,13 @@ export const teacherHomework = [
     class: "Mathematics 101",
     dueDate: "2026-01-28",
     // In bacho ne kar liya hai (Done)
-    completedStudents: ["Ayaan Khan", "Zara Ahmed", "Danish Riaz", "Maria Aslam"],
-    totalStudents: 10, 
+    completedStudents: [
+      "Ayaan Khan",
+      "Zara Ahmed",
+      "Danish Riaz",
+      "Maria Aslam",
+    ],
+    totalStudents: 10,
   },
   {
     id: 2,
@@ -866,9 +822,14 @@ export const teacherHomework = [
     title: "Biology Lab: Microscopy",
     class: "Biology Lab",
     dueDate: "2026-02-10",
-    completedStudents: ["Bilal Ahmed", "Ahsan Tariq", "Rahat Khan", "Maha Qureshi"],
+    completedStudents: [
+      "Bilal Ahmed",
+      "Ahsan Tariq",
+      "Rahat Khan",
+      "Maha Qureshi",
+    ],
     totalStudents: 10,
-  }
+  },
 ];
 
 export const studentsData = [

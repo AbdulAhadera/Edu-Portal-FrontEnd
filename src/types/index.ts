@@ -8,7 +8,6 @@ export type LayoutItem = {
 };
 
 
-
 export type DashboardCard = {
   id: string;
   title: string;
@@ -26,9 +25,14 @@ export type CourseCardData = {
   duration: string;
   image: string;
   barColor: string;
-  courseMaterial?: object;
+  courseMaterial?: CourseMaterial[];
 };
 
+export type CourseMaterial = {
+  addDate: string;
+  title: string;
+  url: string;
+};
 
 export type AssignmentData = {
   id: string;

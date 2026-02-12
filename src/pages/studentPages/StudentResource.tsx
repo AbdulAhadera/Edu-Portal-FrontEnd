@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { courses } from "../../data/mockData";
 import DataTable from "../../components/DataTable";
 import Button from "../../components/baseComponents/Button";
+import { useResources } from "../../hooks/useResources";
+import BaseHeader from "../../components/BaseHeader";
 
 const courseResourceColumns = [
   { key: "title", header: "Title" },
@@ -27,18 +29,19 @@ const StudentResource: React.FC = () => {
     courses[0].id,
   );
 
-  const selectedCourse = courses.find(
-    (course) => course.id === selectedCourseId,
-  );
-  const courseMaterials = selectedCourse?.courseMaterial || [];
+  const { data, loading, error } = useResources();
+
+  const filteredResources = data
+    ? data.filter((r) => r.courseId === selectedCourseId)
+    : [];
 
   return (
     <div>
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-text-main">Resource Library</h1>
-        <p className="text-text-muted mt-1">
-          Access study materials and extra resources
-        </p>
+        <BaseHeader
+          heading="Resource Library"
+          text="Access study materials and extra resources"
+        />
       </div>
 
       <div className="mb-6 overflow-x-auto hide-scrollbar">
@@ -59,7 +62,30 @@ const StudentResource: React.FC = () => {
       </div>
 
       <div className="bg-card">
-        <DataTable rows={courseMaterials} columns={courseResourceColumns} />
+        
+        {error && <div className="p-6 text-center text-red-500">{error}</div>}
+        {loading ? (
+          <div className="p-4 border-2 border-ui-border rounded-sm">
+            <div className="space-y-2 animate-pulse">
+              {Array.from({ length: 3 }).map((_, rowIndex) => (
+                <div key={rowIndex} className="grid grid-cols-4 gap-4">
+                  {Array.from({ length: 4 }).map((_, colIndex) => (
+                    <div
+                      key={colIndex}
+                      className="h-8 bg-gray-300 rounded"
+                    ></div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <DataTable
+            rows={filteredResources}
+            columns={courseResourceColumns}
+            className="px-2 py-3"
+          />
+        )}
       </div>
     </div>
   );
