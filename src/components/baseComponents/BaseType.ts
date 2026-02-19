@@ -14,12 +14,14 @@ export interface ButtonProps {
 export interface BaseInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;
+  required?: boolean;
   wrapperClassName?: string;
 }
 
 export interface FileUploadInputProps {
   label?: string;
   error?: string;
+  required?: boolean;
   onChange?: (file: File | null) => void; // either file either null
   containerClassName?: string;
   dropzoneClassName?: string;
@@ -33,8 +35,15 @@ export interface Column<T, K extends keyof T = keyof T> {
   nowrap?: boolean;
 }
 
+
 export interface DataTableProps<T> {
   rows: T[];
   columns?: Column<T>[];
   className: string;
+}
+ 
+export interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  children: ReactNode;
 }
