@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { ReactNode } from "react";
+import type { FieldValues } from "react-hook-form";
 
 export interface ButtonProps {
   text?: string;
@@ -16,6 +18,8 @@ export interface BaseInputProps extends React.InputHTMLAttributes<HTMLInputEleme
   error?: string;
   required?: boolean;
   wrapperClassName?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  register?: any; // from react-hook-form
 }
 
 export interface FileUploadInputProps {
@@ -24,7 +28,7 @@ export interface FileUploadInputProps {
   required?: boolean;
   onChange?: (file: File | null) => void; // either file either null
   containerClassName?: string;
-  dropzoneClassName?: string;
+  className?: string;
 }
 
 
@@ -47,3 +51,18 @@ export interface ModalProps {
   onClose: () => void;
   children: ReactNode;
 }
+
+export type FieldConfig = {
+  name: string;
+  label: string;
+  type?: "text" | "email" | "number" | "datetime-local" | "file" | string;
+  placeholder?: string;
+  required?: boolean;
+};
+
+export type BaseFormProps = {
+  fields: FieldConfig[];
+  defaultValues?: Record<string, any>;
+  onSubmit: (data: FieldValues) => void;
+  submitButtonText: string;
+};

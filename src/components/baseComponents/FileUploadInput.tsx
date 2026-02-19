@@ -1,20 +1,27 @@
 import React, { useState } from "react";
 import type { FileUploadInputProps } from "./BaseType";
+import type { UseFormRegisterReturn } from "react-hook-form";
 
-const FileUploadInput: React.FC<FileUploadInputProps> = ({
+interface RHFFileUploadInputProps extends FileUploadInputProps {
+  register?: UseFormRegisterReturn;
+}
+
+const FileUploadInput: React.FC<RHFFileUploadInputProps> = ({
   label,
   error,
+  required = false,
   onChange,
   containerClassName = "",
-  dropzoneClassName = "",
+  className,
+  register,
 }) => {
   const [fileName, setFileName] = useState<string | null>(null);
 
   return (
     <div className={`flex flex-col w-full ${containerClassName}`}>
       {label && (
-        <label className="mb-1 text-sm font-medium text-text-muted">
-          {label}
+        <label className="mb-1 text-sm font-medium text-text-main">
+          {label} {required && <span className="ml-1 text-danger">*</span>}
         </label>
       )}
 
@@ -23,8 +30,9 @@ const FileUploadInput: React.FC<FileUploadInputProps> = ({
           flex items-center justify-center
           border border-dashed rounded-sm cursor-pointer
           text-sm transition
-          hover:bg-gray-50
-          ${dropzoneClassName}
+          hover:bg-ui-hover
+          text-text-muted
+          
         `}
       >
         {fileName ? (
@@ -36,9 +44,12 @@ const FileUploadInput: React.FC<FileUploadInputProps> = ({
         <input
           type="file"
           hidden
+          {...(register ? register : {})} // ← RHF binding
           onChange={(e) => {
             const file = e.target.files?.[0] ?? null;
             setFileName(file?.name ?? null);
+            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+            register?.onChange && register.onChange(e); // trigger RHF
             onChange?.(file);
           }}
         />
