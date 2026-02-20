@@ -11,7 +11,7 @@ import {
   TeacherAttendance,
   TeacherHomework,
   LoadingState,
-  TeacherProfile
+  TeacherProfile,
 } from "./pages/index.ts";
 
 import {
@@ -28,9 +28,14 @@ import {
   StudentProfile,
 } from "./pages/index.ts";
 
+import { SignIn } from "./pages/index.ts";
+
 const Router: React.FC = () => {
   return (
     <Routes>
+      {/* Auth Routes */}
+      <Route path="/" element={<SignIn />} />
+
       {/* Student Routes */}
       <Route path="/student" element={<Layout role="student" />}>
         <Route path="" element={<StudentDashboard />} />

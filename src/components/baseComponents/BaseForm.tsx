@@ -10,6 +10,7 @@ const BaseForm: React.FC<BaseFormProps> = ({
   defaultValues = {},
   onSubmit,
   submitButtonText,
+  inputClassName = "",
 }) => {
   const {
     register,
@@ -41,7 +42,7 @@ const BaseForm: React.FC<BaseFormProps> = ({
                 required: field.required ? `${field.label} is required` : false,
               })}
               error={errors[field.name]?.message?.toString()}
-              className="py-1 px-2 text-text-main border border-gray-300 rounded-sm w-full"
+              className={`${inputClassName} py-1 px-2 text-text-main border border-gray-300 rounded-sm w-full`}
             />
           )}
         </div>

@@ -52,3 +52,10 @@ export {
 
 import LoadingState from "../components/LoadingState";
 export { LoadingState };
+
+
+// import auth pages
+import SignIn from "./authPages/SignIn";
+
+// export auth pages
+export { SignIn };

@@ -65,4 +65,5 @@ export type BaseFormProps = {
   defaultValues?: Record<string, any>;
   onSubmit: (data: FieldValues) => void;
   submitButtonText: string;
+  inputClassName?: string;
 };
