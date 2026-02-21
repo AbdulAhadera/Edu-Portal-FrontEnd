@@ -22,6 +22,12 @@ import TeacherAttendance from "./teacherPages/TeacherAttendance";
 import TeacherHomework from "./teacherPages/TeacherHomework";
 import TeacherProfile from "./teacherPages/TeacherProfile";
 
+
+// import auth pages
+import SignIn from "./authPages/SignIn";
+import SignUp from "./authPages/SignUp";
+
+
 // Teacher Export
 export {
   TeacherDashboard,
@@ -54,8 +60,7 @@ import LoadingState from "../components/LoadingState";
 export { LoadingState };
 
 
-// import auth pages
-import SignIn from "./authPages/SignIn";
+
 
 // export auth pages
-export { SignIn };
+export { SignIn, SignUp };
