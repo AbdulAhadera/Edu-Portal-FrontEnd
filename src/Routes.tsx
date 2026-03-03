@@ -28,13 +28,14 @@ import {
   StudentProfile,
 } from "./pages/index.ts";
 
-import { SignIn } from "./pages/index.ts";
+import { SignIn, SignUp } from "./pages/index.ts";
 
 const Router: React.FC = () => {
   return (
     <Routes>
       {/* Auth Routes */}
       <Route path="/" element={<SignIn />} />
+      <Route path="/register-school" element={<SignUp />} />
 
       {/* Student Routes */}
       <Route path="/student" element={<Layout role="student" />}>

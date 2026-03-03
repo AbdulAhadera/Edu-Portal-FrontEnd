@@ -5,6 +5,7 @@ import BaseForm from "../../components/baseComponents/BaseForm";
 import type { FieldConfig } from "../../components/baseComponents/BaseType";
 import Button from "../../components/baseComponents/Button";
 import { Link } from "react-router-dom"; // Assumed router package
+import logo from "../../../public/logo.png";
 
 const SignIn = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -26,7 +27,11 @@ const SignIn = () => {
   ];
 
   const schoolTestimonials = [
-    "Karachi Grammar School", "The City School", "Beaconhouse", "Foundation Public", "Habib Public",
+    "Karachi Grammar School",
+    "The City School",
+    "Beaconhouse",
+    "Foundation Public",
+    "Habib Public",
   ];
 
   const bgImages = [
@@ -44,10 +49,8 @@ const SignIn = () => {
 
   return (
     <div className="min-h-screen w-full flex bg-card overflow-hidden">
-      
       {/* Left Section: 50% Width + Color Images */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden group border-r border-ui-border">
-        
         {/* Background Layer - Full Color Cross-fade */}
         <div className="absolute inset-0">
           <AnimatePresence initial={false}>
@@ -69,10 +72,12 @@ const SignIn = () => {
 
         <div className="relative z-20 w-full p-16 flex flex-col justify-between text-white">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:rotate-6">
-              <span className="font-black text-white text-lg tracking-tighter">A</span>
+            <div className="h-10 w-10 rounded-sm flex items-center justify-center shadow-lg font-black text-lg">
+              <img src={logo} />
             </div>
-            <span className="font-bold tracking-tight text-xl">Academia.</span>
+            <span className="font-bold tracking-tight text-xl">
+              Prism - Spectrum of Smart Learning.
+            </span>
           </div>
 
           <div className="space-y-10">
@@ -82,7 +87,8 @@ const SignIn = () => {
                 <span className="text-primary italic">Education.</span>
               </h1>
               <p className="max-w-md text-lg text-white/80 font-medium leading-relaxed">
-                Connect with Pakistan's elite academic network through a unified digital gateway.
+                Connect with Pakistan's elite academic network through a unified
+                digital gateway.
               </p>
             </div>
 
@@ -100,7 +106,6 @@ const SignIn = () => {
 
       {/* Right Section: 50% Width Form */}
       <main className="w-full lg:w-1/2 flex items-center justify-center p-8 sm:p-16 bg-card relative overflow-hidden">
-        
         {/* LOG Watermark */}
         <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 opacity-[0.03] pointer-events-none select-none">
           <h1 className="text-[25rem] font-black tracking-tighter uppercase leading-none text-text-main">
@@ -114,7 +119,9 @@ const SignIn = () => {
           className="w-full max-w-[420px] relative z-10"
         >
           <header className="mb-12">
-            <h2 className="text-4xl font-bold text-text-main tracking-tight">Sign In</h2>
+            <h2 className="text-4xl font-bold text-text-main tracking-tight">
+              Sign In
+            </h2>
             <p className="text-text-muted font-medium mt-2">
               Access your personalized academic dashboard.
             </p>
@@ -129,10 +136,13 @@ const SignIn = () => {
 
           <div className="mt-8 mb-12">
             <p className="text-sm text-text-muted/70">
-              <Link to="/register-school" className="text-primary font-bold hover:underline">
+              <Link
+                to="/register-school"
+                className="text-primary font-bold hover:underline"
+              >
                 School registration
-              </Link>
-              {" "}is exclusively managed by school administrators.
+              </Link>{" "}
+              is exclusively managed by school administrators.
             </p>
           </div>
 

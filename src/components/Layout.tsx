@@ -3,8 +3,7 @@ import { Menu, Sun, Moon, X, Bell, UserCircle } from "lucide-react";
 import { roleSideBarItems } from "../data/mockData";
 import { useLocation, Outlet, useNavigate } from "react-router-dom";
 import Button from "./baseComponents/Button";
-import EduLogoDark from "../assets/EduLogoDark.png";
-import EduLogoLight from "../assets/EduLogoLight.png";
+import logo from "../../public/logo.png";
 import LoadingState from "./LoadingState";
 
 interface LayoutProps {
@@ -13,7 +12,7 @@ interface LayoutProps {
 
 const Layout = ({ role }: LayoutProps) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [loading, serLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [isDark, setIsDark] = useState(() => {
     return document.documentElement.classList.contains("dark");
@@ -58,23 +57,11 @@ const Layout = ({ role }: LayoutProps) => {
           }
         />
 
-        {/* Theme Switcher */}
         <div className="flex items-center flex-1">
-          {isDark ? (
-            <>
-              <img src={EduLogoDark} alt="EduLogo Dark" className="h-12" />
-              <p className="text-text-main font-bold text-2xl  hidden md:block">
-                Edu Portal
-              </p>
-            </>
-          ) : (
-            <>
-              <img src={EduLogoLight} alt="EduLogo Light" className="h-12" />
-              <p className="text-text-muted font-bold text-2xl hidden md:block">
-                Edu Portal
-              </p>
-            </>
-          )}
+          <img src={logo} alt="EduLogo Light" className="h-12" />
+          <p className="text-text-muted font-bold text-2xl hidden md:block">
+            Prism
+          </p>
         </div>
 
         {/* Upper Panel */}

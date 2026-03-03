@@ -21,7 +21,6 @@ import {
 } from "lucide-react";
 
 import type {
-  notifications,
   Homework,
   AssignmentData,
   CourseCardData,
@@ -35,7 +34,7 @@ import type { Announcement } from "../hooks/useAnnouncements.ts";
 
 // --- Student Data Constants ---
 
-export const notificationData: notification[] = [
+export const notificationData = [
   {
     id: "1",
     type: "assignment",
@@ -1551,5 +1550,3 @@ export const roleSideBarItems: Record<UserRole, LayoutItem[]> = {
     { id: "feedback", label: "Feedback", icon: FileText },
   ],
 };
-
-

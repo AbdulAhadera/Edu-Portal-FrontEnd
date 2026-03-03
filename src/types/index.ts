@@ -7,7 +7,6 @@ export type LayoutItem = {
   icon: React.ComponentType;
 };
 
-
 export type DashboardCard = {
   id: string;
   title: string;
@@ -51,8 +50,6 @@ export type AssignmentData = {
 
 export type AttendanceStatus = "present" | "absent" | "late" | undefined;
 
-
-
 export type DropdownOption = {
   label: string;
   value: string | number;
@@ -84,7 +81,6 @@ export type SubjectStudent = {
   grade: string;
   performance: number; // will remove later and will be calculated manually
 };
-
 
 export type AttendanceRecord = {
   date: string;
